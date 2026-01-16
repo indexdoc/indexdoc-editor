@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CherryMarkdown + Mermaid 转 PNG</title>
+  <link rel="stylesheet" href="https://unpkg.com/cherry-markdown@latest/dist/cherry-markdown.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    #output img {
+      display: block;
+      margin-bottom: 8px;
+      max-width: 100%;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 4px 8px;
+      background: #4caf50;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="markdown-container"></div>
+  <button id="processBtn">生成 Word 数据</button>
+
+  <script src="https://unpkg.com/cherry-markdown@latest/dist/cherry-markdown.js"></script>
+  <script>
+    const editor = new Cherry({
+      id: 'markdown-container',
+      value: `# 示例 Markdown
+        这是普通段落。
+
+        \`\`\`mermaid
+        graph TD
+          A[开始] --> B{条件}
+          B -->|是| C[操作1]
+          B -->|否| D[操作2]
+        \`\`\`
+`,
+      callback: {}
+    });
+
+    // 工具函数：Mermaid 转 PNG Base64
+    async function mermaidToBase64(mermaidCode) {
+      return new Promise((resolve) => {
+        const tempDiv = document.createElement('div');
+        const tempCherry = new Cherry({
+          id: tempDiv,
+          value: '```mermaid\n' + mermaidCode + '\n```',
+          callback: {
+            afterAsyncRender: (md, html) => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              const svgEl = doc.querySelector('svg');
+              if (!svgEl) return resolve(null);
+
+              const width = parseFloat(svgEl.getAttribute('width')) || svgEl.getBBox().width || 300;
+              const height = parseFloat(svgEl.getAttribute('height')) || svgEl.getBBox().height || 150;
+
+              const svgData = new XMLSerializer().serializeToString(svgEl);
+              const canvas = document.createElement('canvas');
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext('2d');
+
+              const img = new Image();
+              img.onload = () => {
+                ctx.drawImage(img, 0, 0, width, height);
+                const base64Png = canvas.toDataURL('image/png');
+                resolve(base64Png);
+              };
+              img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgData);
+            }
+          }
+        });
+      });
+    }
+
+    // 点击处理
+    document.getElementById('processBtn').addEventListener('click', async () => {
+      let markdown = editor.getMarkdown();
+
+      // 替换 Mermaid 代码块
+      const mermaidRegex = /```mermaid\n([\s\S]*?)```/g;
+      const promises = [];
+      let match;
+      while ((match = mermaidRegex.exec(markdown)) !== null) {
+        const code = match[1];
+        promises.push(mermaidToBase64(code));
+      }
+
+      const base64Images = await Promise.all(promises);
+
+      // 替换 Markdown 中 Mermaid 为 Base64 图片
+      let index = 0;
+      markdown = markdown.replace(mermaidRegex, () => {
+        const img = base64Images[index++];
+        return img ? `![](${img})` : '';
+      });
+
+      console.log('处理后的 Markdown:', markdown);
+
+      // 发送到后端生成 Word
+      fetch('/api/markdown_to_word', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ markdown })
+      }).then(res => res.blob()).then(blob => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'document.docx';
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
