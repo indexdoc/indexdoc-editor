@@ -237,6 +237,12 @@
                 onclick="export_txt()">
                 <i class="fa fa-file-text mr-2"></i>复制文字
             </button>
+            <!-- 导入按钮 綠色 -->
+            <button id="importWord"
+                class="upEvidence bg-emerald-500 hover:bg-emerald-600 text-white py-2 px-4 rounded transition-colors ml-2"
+                data-type="word">
+                <i class="fa fa-upload mr-2"></i>导入文件
+            </button>
         </div>
         <!-- 编辑器容器 -->
         <div id="left-panel">
@@ -262,6 +268,7 @@
         let end_pos = { line: 0, ch: 0 }
         let editor
         let headings = [];
+        let cm;
 
         // 页面加载完成后初始化编辑器
         window.onload = function () {
@@ -313,7 +320,7 @@
             }
 
             // 获取 CodeMirror 实例
-            let cm = editor.getCodeMirror();
+            cm = editor.getCodeMirror();
             // 获取编辑区 DOM
             const editWrapper = cm.getWrapperElement();
 
@@ -423,7 +430,8 @@
                 cm.replaceSelection(unixFormattedText);
             });
 
-
+            // 初始化导入按钮
+            initImportBtn();
         };
 
         // 循环监听预览区 DOM 是否生成
@@ -642,9 +650,6 @@
             }
         }
 
-
-
-
         //复制为文本
         function export_txt() {
             var text = editor.getMarkdown();
@@ -683,7 +688,6 @@
 
             document.body.removeChild(textarea);
         }
-
 
         async function export_word(type) {
             var md_content = editor.getMarkdown();
@@ -757,6 +761,49 @@
 
                 });
             }
+        }
+
+        //导入word excel html
+        async function initImportBtn() {
+            // 1. 必须同时加载 upload 和 layer 模块，缺一不可
+            layui.use(['upload', 'layer'], function () {
+                var upload = layui.upload;
+                var layer = layui.layer; 
+                var layerIndex = null;
+                upload.render({
+                    elem: '.upEvidence', 
+                    url: '/api/md/importFile',
+                    accept: 'file',
+                    before: function () {
+                        if (!layerIndex) {
+                            layerIndex = layer.load(2, { shade: [0.5, '#000'], time: 15000 });
+                        }
+                    },
+                    done: function (res) {
+                        layerIndex && layer.close(layerIndex);
+                        layerIndex = null; 
+
+                        if (res.success) {
+                            var context = res.context || ''; 
+                            const cursorPos = cm.getCursor();
+                            cm.replaceRange(context, cursorPos);
+                            cm.setCursor({
+                                line: cursorPos.line,
+                                ch: cursorPos.ch + context.length
+                            });
+                            layer.msg('文件导入并插入成功');
+                        } else {
+                            layer.msg(res.msg || '文件导入失败');
+                        }
+                    },
+                    error: function () {
+                        // 错误回调同样先关加载层+重置索引
+                        layerIndex && layer.close(layerIndex);
+                        layerIndex = null;
+                        layer.msg('上传失败，请检查网络或文件。');
+                    }
+                });
+            });
         }
     </script>
 </body>

@@ -1,9 +1,14 @@
 import base64
 import json
+import os
 import uuid
 import config
 from BaseHandler import BaseApiHandler
+from utils.DocxToMdUtil import convert_docx_to_md
+from utils.ExcelToMdUtil import TableToMarkdown
+from utils.HtmlToMdUtil import convert_to_md
 from utils.ToWordUtil import str2docx, html2pdf, str2md
+from src.utils import FileUtil
 
 class ApiMdWordtHandler(BaseApiHandler):
     need_login = False
@@ -71,9 +76,79 @@ class ApiMdFileHandler(BaseApiHandler):
         else:
             self.write({"success": False, "msg": "导出失败"})
 
+class ApiImportFileHandler(BaseApiHandler):
+    need_login = False
+
+    def mypost(self):
+        user = self.current_user
+        upload_path = config.user_file_path + '/upload/'  # 文件的暂存路径
+        if not os.path.exists(upload_path):
+            os.makedirs(upload_path)
+        file_metas = self.request.files.get('file', None)  # 提取表单中‘name’为‘file’的文件元数据
+
+        if not file_metas:
+            _rtn = {'success': False,
+                    'msg': '文件为空！',
+                    'obj': None,
+                    }
+            self.write(_rtn)
+            return
+        if len(file_metas) == 0:
+            _rtn = {'success': False,
+                    'msg': '文件为空！',
+                    'obj': None,
+                    }
+            self.write(_rtn)
+            return
+        file_meta = file_metas[0]
+        _file_suffix = FileUtil.get_file_suffix(file_meta['filename'])
+
+        # 定义支持的文件后缀白名单
+        support_suffix = {'.docx', '.xlsx', '.xls', '.ods', '.csv', '.tsv', '.html','.mhtml','.htm'}
+        support_suffix_word = {'.docx'}
+        support_suffix_excel = {'.xlsx', '.xls', '.ods', '.csv', '.tsv'}
+        support_suffix_html = {'.html','.mhtml','.htm'}
+
+
+        # 校验文件后缀，不支持则直接返回提示
+        if _file_suffix not in support_suffix:
+            _rtn = {'success': False,
+                    'msg': '您当前上传的文件格式不支持，当前支持的文件类型有：Word、Excel、网页文件（.html、.mhtml、.htm）',
+                    }
+            self.write(_rtn)
+            return
+
+        # 后缀校验通过，才执行文件保存
+        _file_path = upload_path + file_meta['filename']
+        with open(_file_path, 'wb') as upfile:
+            upfile.write(file_meta['body'])
+
+        if _file_suffix in support_suffix_word:
+            md_text = convert_docx_to_md(_file_path)
+        elif _file_suffix in support_suffix_excel:
+            converter = TableToMarkdown()
+            md_result = converter.convert(_file_path)
+            md_text = md_result['fill']
+        elif _file_suffix in support_suffix_html:
+            try:
+                md_text = convert_to_md(_file_path, local_image=True)
+            except Exception as e:
+                _rtn = {'success': False,
+                        'msg': '请检查所上传的网页文件是否损坏或存在格式问题',
+                        }
+                self.write(_rtn)
+                return
+
+        _rtn = {'success': True,
+                'msg': 'success！',
+                'context': md_text,
+                }
+        self.write(_rtn)
+        return
 
 urls = [
     ('/api/md/mdWord', ApiMdWordtHandler),
     ('/api/md/mdPdf', ApiMdPdftHandler),
-    ('/api/md/mdFile', ApiMdFileHandler)
+    ('/api/md/mdFile', ApiMdFileHandler),
+    ('/api/md/importFile', ApiImportFileHandler),
 ]

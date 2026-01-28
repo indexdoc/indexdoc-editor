@@ -2,7 +2,6 @@ import os
 import logging
 import subprocess
 from pathlib import Path
-
 from config import base_path
 
 DEFAULT_TEMPLATE =  os.path.join(base_path + '/src/utils/docxTemplate/', "Normal-zh.docx")  # 可自定义默认模板
@@ -72,9 +71,9 @@ def str2docx(
     success = _run_pandoc(cmd, input_data=markdown_str.encode('utf-8'))
 
     if success:
-        logging.info(f"✅ 成功生成 Word 文件: {output_docx}")
+        logging.info(f" 成功生成 Word 文件: {output_docx}")
     else:
-        logging.error("❌ 生成失败")
+        logging.error(" 生成失败")
     return success
 
 PDF_ENGINE_PATH = None
@@ -98,7 +97,7 @@ def html2pdf(
 
     # PDF 引擎
     pdf_engine = PDF_ENGINE_PATH if PDF_ENGINE_PATH and Path(PDF_ENGINE_PATH).exists() else "wkhtmltopdf"
-    logging.info(f"📄 使用 PDF 引擎: {pdf_engine}")
+    logging.info(f" 使用 PDF 引擎: {pdf_engine}")
 
     # Pandoc 命令
     cmd = [
@@ -114,7 +113,7 @@ def html2pdf(
     success = _run_pandoc(cmd, input_data=html_str.encode("utf-8"))
 
     if success:
-        logging.info(f"✅ 成功生成 PDF: {output_pdf}")
+        logging.info(f" 成功生成 PDF: {output_pdf}")
     return success
 
 def str2md(
