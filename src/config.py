@@ -21,17 +21,6 @@ if not os.path.exists(log_path):
     os.makedirs(log_path)
 
 port = 50003
-ck_config = {
-    # 'host': os.environ.get('NL_DB_HOST'),
-    # 'port': os.environ.get('NL_DB_PORT'),
-    # 'host': '10.0.3.1',
-    'host': '127.0.0.1',
-    'port': '9000',
-    'user': 'default',
-    'password': '',
-    'database': 'default'
-}
-
 
 # 设置线程池最大线程数量
 from concurrent.futures import ThreadPoolExecutor

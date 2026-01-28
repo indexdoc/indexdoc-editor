@@ -557,8 +557,9 @@ class TableToMarkdown:
         sheets_data = self._get_data_and_merges(path)
         if not sheets_data: return {'blank': '', 'fill': ''}
 
-        title = self.file_title_start_char + " " + path.stem
-        out_blank, out_fill = [title], [title]
+        # title = self.file_title_start_char + " " + path.stem
+        # out_blank, out_fill = [title], [title]
+        out_blank, out_fill = [], []
 
         for sheet_name, (sheet_df, sheet_merges) in sheets_data.items():
             sheet_md_blank, sheet_md_filed = self.sheet_to_md(sheet_name, sheet_df, sheet_merges)

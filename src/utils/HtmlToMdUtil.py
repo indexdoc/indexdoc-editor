@@ -9,7 +9,7 @@ import requests
 from PIL import Image
 from readability import Document
 import html2text
-from utils.imgToBase64Utils import Image2Base64
+from utils.ImgToBase64Utils import Image2Base64
 
 
 # ============ 图片下载和处理类 ============

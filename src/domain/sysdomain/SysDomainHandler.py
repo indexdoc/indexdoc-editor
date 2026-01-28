@@ -8,6 +8,7 @@ from utils.DocxToMdUtil import convert_docx_to_md
 from utils.ExcelToMdUtil import TableToMarkdown
 from utils.HtmlToMdUtil import convert_to_md
 from utils.ToWordUtil import str2docx, html2pdf, str2md
+from utils.PptxToMd import pptx_to_md
 from src.utils import FileUtil
 
 class ApiMdWordtHandler(BaseApiHandler):
@@ -86,66 +87,79 @@ class ApiImportFileHandler(BaseApiHandler):
             os.makedirs(upload_path)
         file_metas = self.request.files.get('file', None)  # 提取表单中‘name’为‘file’的文件元数据
 
-        if not file_metas:
-            _rtn = {'success': False,
-                    'msg': '文件为空！',
-                    'obj': None,
-                    }
+        if not file_metas or len(file_metas) == 0:
+            _rtn = {'success': False, 'msg': '文件为空！', 'obj': None}
             self.write(_rtn)
             return
-        if len(file_metas) == 0:
-            _rtn = {'success': False,
-                    'msg': '文件为空！',
-                    'obj': None,
-                    }
-            self.write(_rtn)
-            return
+
         file_meta = file_metas[0]
         _file_suffix = FileUtil.get_file_suffix(file_meta['filename'])
 
-        # 定义支持的文件后缀白名单
-        support_suffix = {'.docx', '.xlsx', '.xls', '.ods', '.csv', '.tsv', '.html','.mhtml','.htm'}
+        # 1. 新增.pptx到支持的后缀白名单
+        support_suffix = {'.docx', '.xlsx', '.xls', '.ods', '.csv', '.tsv', '.html', '.mhtml', '.htm', '.pptx', '.md'}
         support_suffix_word = {'.docx'}
         support_suffix_excel = {'.xlsx', '.xls', '.ods', '.csv', '.tsv'}
-        support_suffix_html = {'.html','.mhtml','.htm'}
-
+        support_suffix_html = {'.html', '.mhtml', '.htm'}
+        support_suffix_pptx = {'.pptx'}
 
         # 校验文件后缀，不支持则直接返回提示
         if _file_suffix not in support_suffix:
             _rtn = {'success': False,
-                    'msg': '您当前上传的文件格式不支持，当前支持的文件类型有：Word、Excel、网页文件（.html、.mhtml、.htm）',
+                    'msg': '您当前上传的文件格式不支持，当前支持的文件类型有：Word、Excel、PPT、网页文件（.html、.mhtml、.htm）、Markdown',
                     }
             self.write(_rtn)
             return
 
-        # 后缀校验通过，才执行文件保存
+        # 后缀校验通过，执行文件保存
         _file_path = upload_path + file_meta['filename']
         with open(_file_path, 'wb') as upfile:
             upfile.write(file_meta['body'])
 
-        if _file_suffix in support_suffix_word:
-            md_text = convert_docx_to_md(_file_path)
-        elif _file_suffix in support_suffix_excel:
-            converter = TableToMarkdown()
-            md_result = converter.convert(_file_path)
-            md_text = md_result['fill']
-        elif _file_suffix in support_suffix_html:
-            try:
+        md_text = ""
+        try:
+            if _file_suffix in support_suffix_word:
+                md_text = convert_docx_to_md(_file_path)
+            elif _file_suffix in support_suffix_excel:
+                converter = TableToMarkdown()
+                md_result = converter.convert(_file_path)
+                md_text = md_result['fill']
+            elif _file_suffix in support_suffix_html:
                 md_text = convert_to_md(_file_path, local_image=True)
-            except Exception as e:
-                _rtn = {'success': False,
-                        'msg': '请检查所上传的网页文件是否损坏或存在格式问题',
-                        }
-                self.write(_rtn)
-                return
+            elif _file_suffix in support_suffix_pptx:
+                md_file_path = pptx_to_md(_file_path)
+                # 读取md文件内容到md_text
+                with open(md_file_path, 'r', encoding='utf-8') as f:
+                    md_text = f.read()
+                # 清理临时md文件（工具类生成在系统临时目录，用完删除避免冗余）
+                if os.path.exists(md_file_path):
+                    os.remove(md_file_path)
+            # md文件直接读取内容
+            elif _file_suffix == '.md':
+                with open(_file_path, 'r', encoding='utf-8') as f:
+                    md_text = f.read()
+        except Exception as e:
+            # 统一捕获所有格式转换的异常，返回友好提示
+            _rtn = {'success': False,
+                    'msg': f'文件解析失败：{str(e)}',
+                    }
+            self.write(_rtn)
+            # 清理上传的临时文件（可选，根据项目需求）
+            if os.path.exists(_file_path):
+                os.remove(_file_path)
+            return
+        finally:
+            # 最终清理上传的源文件（可选，若不需要保留上传的文件则开启）
+            # if os.path.exists(_file_path):
+            #     os.remove(_file_path)
+            pass
 
+        # 转换成功，返回md内容给前端
         _rtn = {'success': True,
-                'msg': 'success！',
+                'msg': '文件导入成功！',
                 'context': md_text,
                 }
         self.write(_rtn)
         return
-
 urls = [
     ('/api/md/mdWord', ApiMdWordtHandler),
     ('/api/md/mdPdf', ApiMdPdftHandler),

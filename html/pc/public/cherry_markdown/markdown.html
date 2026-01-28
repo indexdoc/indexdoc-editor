@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Cherry Markdown</title>
+    <title>Markdown编辑器</title>
     <link rel="stylesheet" type="text/css" href="../static/cherry-markdown/cherry-markdown.css">
     <script src="../static/js/tailwind.js"></script>
     <link href="../static/css/fontAwesome.css" rel="stylesheet">
@@ -221,6 +221,11 @@
 <body>
     <div id="contain">
         <div class="export">
+            <button id="importFile"
+                class="upEvidence bg-emerald-500 hover:bg-emerald-600 text-white py-2 px-4 rounded transition-colors ml-2"
+                data-type="word">
+                <i class="fa fa-folder-open mr-2"></i>打开文件
+            </button>
             <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition-colors"
                 onclick="export_word('word')">
                 <i class="fa fa-file-word-o mr-2"></i>导出word
@@ -236,12 +241,6 @@
             <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition-colors"
                 onclick="export_txt()">
                 <i class="fa fa-file-text mr-2"></i>复制文字
-            </button>
-            <!-- 导入按钮 綠色 -->
-            <button id="importWord"
-                class="upEvidence bg-emerald-500 hover:bg-emerald-600 text-white py-2 px-4 rounded transition-colors ml-2"
-                data-type="word">
-                <i class="fa fa-upload mr-2"></i>导入文件
             </button>
         </div>
         <!-- 编辑器容器 -->
@@ -330,7 +329,6 @@
             editTitle.innerText = '编辑区';
             const Tip = document.createElement('div');
             Tip.className = 'tip';
-            Tip.innerText = '可将大模型中的内容复制到此处进行编辑';
             editTitle.prepend(Tip)
             editWrapper.appendChild(editTitle);
 
@@ -763,48 +761,59 @@
             }
         }
 
-        //导入word excel html
         async function initImportBtn() {
-            // 1. 必须同时加载 upload 和 layer 模块，缺一不可
             layui.use(['upload', 'layer'], function () {
                 var upload = layui.upload;
-                var layer = layui.layer; 
+                var layer = layui.layer;
                 var layerIndex = null;
-                upload.render({
-                    elem: '.upEvidence', 
-                    url: '/api/md/importFile',
-                    accept: 'file',
+                var uploadInst = upload.render({
+                    elem: '#importFile', 
+                    url: '/api/md/importFile', 
+                    accept: 'file', 
+                    exts: 'docx|xlsx|xls|ods|csv|tsv|html|mhtml|htm|pptx|md', 
+                    field: 'file', 
+                    auto: true, 
+                    method: 'post',
                     before: function () {
+                        // 开启加载层
                         if (!layerIndex) {
                             layerIndex = layer.load(2, { shade: [0.5, '#000'], time: 15000 });
                         }
                     },
                     done: function (res) {
                         layerIndex && layer.close(layerIndex);
-                        layerIndex = null; 
-
+                        layerIndex = null;
                         if (res.success) {
-                            var context = res.context || ''; 
-                            const cursorPos = cm.getCursor();
-                            cm.replaceRange(context, cursorPos);
-                            cm.setCursor({
-                                line: cursorPos.line,
-                                ch: cursorPos.ch + context.length
-                            });
-                            layer.msg('文件导入并插入成功');
+                            var context = res.context || '';
+                            cm.setValue(context);
+                            cm.setCursor(cm.lineCount() - 1, 0);
+                            layer.msg('文件打开成功');
                         } else {
                             layer.msg(res.msg || '文件导入失败');
                         }
                     },
                     error: function () {
-                        // 错误回调同样先关加载层+重置索引
+                        // 错误处理
                         layerIndex && layer.close(layerIndex);
                         layerIndex = null;
-                        layer.msg('上传失败，请检查网络或文件。');
+                        layer.msg('上传失败，请检查网络或接口');
                     }
                 });
+                // 强制覆盖layui自动创建的上传input的accept属性（浏览器级精准筛选）
+                // 延迟执行，确保layui已经生成了对应的input元素
+                setTimeout(function () {
+                    // layui自动创建的上传input会绑定在按钮同级，class为layui-upload-file
+                    var layuiUploadInput = document.querySelector('.layui-upload-file');
+                    if (layuiUploadInput) {
+                        // 强制设置accept为指定后缀，实现浏览器级精准筛选，彻底解决筛选不准和md不显示问题
+                        layuiUploadInput.accept = '.docx,.xlsx,.xls,.ods,.csv,.tsv,.html,.mhtml,.htm,.pptx,.md';
+                        // 兜底：移除layui可能添加的多余acceptMime，防止冲突
+                        layuiUploadInput.removeAttribute('lay-accept');
+                    }
+                }, 100);
             });
         }
+
     </script>
 </body>
 
