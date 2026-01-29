@@ -4,7 +4,7 @@
 
 ---
 # Markdown Editor
-A lightweight Markdown editor tailored for technical writing, featuring real-time preview, built-in AI syntax checking and format optimization capabilities that precisely meet the needs of technical document creation. It supports exporting content to Word, PDF, and Markdown formats, one-click copying of Markdown text, and is compatible with importing files in multiple formats (.docx, .xlsx, .xls, .ods, .csv, .tsv, .html, .mhtml, .htm, .pptx, .md).
+A lightweight Markdown editor tailored for technical writing, featuring real-time preview, formating optimization capabilities that precisely meet the needs of technical document creation. It supports exporting content to Word, PDF, and Markdown formats, one-click copying of Markdown text, and is compatible with importing files in multiple formats (.docx, .xlsx, .xls, .ods, .csv, .tsv, .html, .mhtml, .htm, .pptx, .md).
 
 [![Python Version](https://img.shields.io/badge/python-3.10+-green.svg)](https://www.python.org/)  [![GitHub Stars](https://img.shields.io/github/stars/indexdoc/indexdoc-editor?style=social)](https://github.com/indexdoc/indexdoc-editor.git)
 

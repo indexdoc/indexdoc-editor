@@ -4,7 +4,7 @@
 
 ---
 # Markdown编辑器
-一款专为技术写作打造的轻量化Markdown编辑器，支持实时预览，内置AI语法检查与格式优化能力，精准匹配技术文档创作需求；支持内容导出为Word、PDF、Markdown格式，可一键复制Markdown文本，同时兼容多格式文件导入（.docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md）。
+一款专为技术写作打造的轻量化Markdown编辑器，支持实时预览，精准匹配技术文档创作需求；支持内容导出为Word、PDF、Markdown格式，可一键复制Markdown文本，同时兼容多格式文件导入（.docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md）。
 
 [![Python Version](https://img.shields.io/badge/python-3.10+-green.svg)](https://www.python.org/)  [![GitHub Stars](https://img.shields.io/github/stars/indexdoc/indexdoc-editor?style=social)](https://github.com/indexdoc/indexdoc-editor.git)
 
