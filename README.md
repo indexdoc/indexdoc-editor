@@ -1,3 +1,8 @@
+<div align="center">
+  <strong>简体中文</strong> |  <a href="README_EN.md">English</a>
+</div>
+
+---
 # Markdown编辑器
 一款专为技术写作打造的轻量化Markdown编辑器，支持实时预览，内置AI语法检查与格式优化能力，精准匹配技术文档创作需求；支持内容导出为Word、PDF、Markdown格式，可一键复制Markdown文本，同时兼容多格式文件导入（.docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md）。
 
