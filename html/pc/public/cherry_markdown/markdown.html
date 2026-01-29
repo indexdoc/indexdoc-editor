@@ -531,124 +531,6 @@
         }
 
 
-        async function export_pdf(type) {
-            var md_content = editor.getMarkdown();
-            var html_content = editor.getHtml();
-            if (md_content == '') {
-                layui.use(function () {
-                    var layer = layui.layer;
-                    layer.msg('请先编辑内容');
-                    return;
-                })
-            } else {
-                var layerIndex = layer.load(2, { shade: [0.5, '#000'] });
-                var replace_html_content = await replaceSvgWithPng(html_content);
-                $.ajax({
-                    url: '/api/md/mdPdf',
-                    type: 'POST',
-                    data: JSON.stringify({ html_content: replace_html_content }),
-                    contentType: 'application/json; charset=utf-8',
-                    success: function (result) {
-                        if (result.success) {
-                            // 把 Base64 转成 Blob
-                            const byteCharacters = atob(result.file);
-                            const byteNumbers = new Array(byteCharacters.length);
-                            for (let i = 0; i < byteCharacters.length; i++) {
-                                byteNumbers[i] = byteCharacters.charCodeAt(i);
-                            }
-                            const byteArray = new Uint8Array(byteNumbers);
-                            const blob = new Blob([byteArray], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
-                            // 创建下载链接
-                            const link = document.createElement("a");
-                            link.href = window.URL.createObjectURL(blob);
-                            // 找到第一行非空文本
-                            let firstLine = md_content.split('\n').find(line => line.trim() !== '') || 'markdown';
-                            // 去掉 Markdown 标记（如 #、*、_ 等）
-                            firstLine = firstLine.replace(/^#+\s*/, '').replace(/[*_`~>]/g, '').trim();
-                            // 取前 10 个字符（避免太长）
-                            firstLine = firstLine.slice(0, 10) || 'markdown';
-                            link.download = `${firstLine}.pdf`;
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                            window.URL.revokeObjectURL(link.href);
-                            layer.close(layerIndex);
-                            layer.msg('pdf导出成功');
-                        } else {
-                            layer.close(layerIndex);
-                            layer.msg('pdf导出失败');
-                        }
-
-                    },
-                    error: function (xhr, status, err) {
-                        layer.close(layerIndex);
-                        layer.msg('导出失败');
-                        console.error("请求错误:", err);
-                    }
-
-                });
-            }
-        }
-
-        //复制为markdown
-        async function export_markdown() {
-            var md_content = editor.getMarkdown();
-            if (md_content == '') {
-                layui.use(function () {
-                    var layer = layui.layer;
-                    layer.msg('请先编辑内容');
-                    return;
-                })
-            } else {
-                var layerIndex = layer.load(2, { shade: [0.5, '#000'] });
-
-                $.ajax({
-                    url: '/api/md/mdFile',
-                    type: 'POST',
-                    data: JSON.stringify({ md_content: md_content }),
-                    contentType: 'application/json; charset=utf-8',
-                    success: function (result) {
-                        if (result.success) {
-                            // 把 Base64 转成 Blob
-                            const byteCharacters = atob(result.file);
-                            const byteNumbers = new Array(byteCharacters.length);
-                            for (let i = 0; i < byteCharacters.length; i++) {
-                                byteNumbers[i] = byteCharacters.charCodeAt(i);
-                            }
-                            const byteArray = new Uint8Array(byteNumbers);
-                            const blob = new Blob([byteArray], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
-                            // 创建下载链接
-                            const link = document.createElement("a");
-                            link.href = window.URL.createObjectURL(blob);
-                            // 找到第一行非空文本
-                            let firstLine = md_content.split('\n').find(line => line.trim() !== '') || 'markdown';
-                            // 去掉 Markdown 标记（如 #、*、_ 等）
-                            firstLine = firstLine.replace(/^#+\s*/, '').replace(/[*_`~>]/g, '').trim();
-                            // 取前 10 个字符（避免太长）
-                            firstLine = firstLine.slice(0, 10) || 'markdown';
-                            link.download = `${firstLine}.md`;
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                            window.URL.revokeObjectURL(link.href);
-                            layer.close(layerIndex);
-                            layer.msg('markdown导出成功');
-                        } else {
-                            layer.close(layerIndex);
-                            layer.msg('markdown导出失败');
-                        }
-                    },
-                    error: function (xhr, status, err) {
-                        layer.close(layerIndex);
-                        layer.msg('markdown导出失败');
-                        console.error("请求错误:", err);
-                    }
-
-                });
-            }
-        }
-
-        //复制为文本
         function export_txt() {
             var text = editor.getMarkdown();
             if (!text) {
@@ -687,26 +569,81 @@
             document.body.removeChild(textarea);
         }
 
+        async function saveFile(blob, filename) {
+            // Chrome / Edge 支持
+            if (window.showSaveFilePicker) {
+                try {
+                    const handle = await window.showSaveFilePicker({
+                        suggestedName: filename,
+                        types: [{
+                            description: 'Word 文件',
+                            accept: {
+                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx']
+                            }
+                        }]
+                    });
+
+                    const writable = await handle.createWritable();
+                    await writable.write(blob);
+                    await writable.close();
+                    return true;
+                } catch (e) {
+                    // 用户取消选择
+                    console.warn('用户取消保存:', e);
+                    return false;
+                }
+            }
+
+            // 降级方案：普通下载
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+            return true;
+        }
+
+        // 生成安全文件名
+        function buildFileName(md_content, ext) {
+            let firstLine = md_content.split('\n').find(line => line.trim() !== '') || 'markdown';
+
+            firstLine = firstLine
+                .replace(/^#+\s*/, '')
+                .replace(/[\\/:*?"<>|]/g, '')   // 过滤 Windows 非法字符
+                .replace(/[*_`~>]/g, '')
+                .trim()
+                .slice(0, 30) || 'markdown';
+
+            return `${firstLine}.${ext}`;
+        }
         async function export_word(type) {
             var md_content = editor.getMarkdown();
-            if (md_content == '') {
+            if (!md_content) {
                 layui.use(function () {
                     var layer = layui.layer;
                     layer.msg('请先编辑内容');
-                    return;
-                })
-            } else {
-                var layerIndex = layer.load(2, { shade: [0.5, '#000'] });
+                });
+                return;
+            }
+
+            var layerIndex = layer.load(2, { shade: [0.5, '#000'] });
+
+            try {
                 // 替换 Mermaid 代码块
                 const mermaidRegex = /```mermaid\n([\s\S]*?)```/g;
-                md_content = md_content.replace(/<br\s*\/?>/gi, '\\n');
+                md_content = md_content.replace(/<br\s*\/?>/gi, '\n');
+
                 const promises = [];
                 let match;
                 while ((match = mermaidRegex.exec(md_content)) !== null) {
                     const code = match[1];
                     promises.push(mermaidToBase64(code));
                 }
+
                 const base64Images = await Promise.all(promises);
+
                 // 替换 Markdown 中 Mermaid 为 Base64 图片
                 let index = 0;
                 md_content = md_content.replace(mermaidRegex, () => {
@@ -714,50 +651,168 @@
                     return img ? `![](${img})` : '';
                 });
 
-                // console.log('处理后的 Markdown:', markdown);
-                $.ajax({
+                // 请求后端生成 Word
+                const result = await $.ajax({
                     url: '/api/md/mdWord',
                     type: 'POST',
                     data: JSON.stringify({ md_content: md_content }),
-                    contentType: 'application/json; charset=utf-8',
-                    success: function (result) {
-                        if (result.success) {
-                            // 把 Base64 转成 Blob
-                            const byteCharacters = atob(result.file);
-                            const byteNumbers = new Array(byteCharacters.length);
-                            for (let i = 0; i < byteCharacters.length; i++) {
-                                byteNumbers[i] = byteCharacters.charCodeAt(i);
-                            }
-                            const byteArray = new Uint8Array(byteNumbers);
-                            const blob = new Blob([byteArray], { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
-                            // 创建下载链接
-                            const link = document.createElement("a");
-                            link.href = window.URL.createObjectURL(blob);
-                            // 找到第一行非空文本
-                            let firstLine = md_content.split('\n').find(line => line.trim() !== '') || 'markdown';
-                            // 去掉 Markdown 标记（如 #、*、_ 等）
-                            firstLine = firstLine.replace(/^#+\s*/, '').replace(/[*_`~>]/g, '').trim();
-                            // 取前 10 个字符（避免太长）
-                            firstLine = firstLine.slice(0, 10) || 'markdown';
-                            link.download = `${firstLine}.docx`;
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                            window.URL.revokeObjectURL(link.href);
-                            layer.close(layerIndex);
-                            layer.msg('word导出成功');
-                        } else {
-                            layer.close(layerIndex);
-                            layer.msg('word导出失败');
-                        }
-                    },
-                    error: function (xhr, status, err) {
-                        layer.close(layerIndex);
-                        layer.msg('导出失败');
-                        console.error("请求错误:", err);
-                    }
-
+                    contentType: 'application/json; charset=utf-8'
                 });
+
+                if (!result.success) {
+                    layer.msg('word导出失败');
+                    return;
+                }
+
+                // Base64 转 Blob
+                const byteCharacters = atob(result.file);
+                const byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+
+                const byteArray = new Uint8Array(byteNumbers);
+                const blob = new Blob([byteArray], {
+                    type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                });
+
+                // 生成文件名（取 Markdown 第一行）
+                let firstLine = md_content.split('\n').find(line => line.trim() !== '') || 'markdown';
+                firstLine = firstLine
+                    .replace(/^#+\s*/, '')
+                    .replace(/[*_`~>]/g, '')
+                    .trim()
+                    .slice(0, 20) || 'markdown';
+
+                const filename = `${firstLine}.docx`;
+
+                // 让用户选择保存目录
+                const saved = await saveFile(blob, filename);
+
+                if (saved) {
+                    layer.msg('Word 导出成功');
+                } else {
+                    layer.msg('已取消保存');
+                }
+
+            } catch (err) {
+                console.error('导出异常:', err);
+                layer.msg('导出失败');
+            } finally {
+                layer.close(layerIndex);
+            }
+        }
+
+        async function export_pdf(type) {
+            var md_content = editor.getMarkdown();
+            var html_content = editor.getHtml();
+
+            if (!md_content) {
+                layui.use(function () {
+                    var layer = layui.layer;
+                    layer.msg('请先编辑内容');
+                });
+                return;
+            }
+
+            var layerIndex = layer.load(2, { shade: [0.5, '#000'] });
+
+            try {
+                var replace_html_content = await replaceSvgWithPng(html_content);
+
+                const result = await $.ajax({
+                    url: '/api/md/mdPdf',
+                    type: 'POST',
+                    data: JSON.stringify({ html_content: replace_html_content }),
+                    contentType: 'application/json; charset=utf-8'
+                });
+
+                if (!result.success) {
+                    layer.msg('pdf导出失败');
+                    return;
+                }
+
+                // Base64 → Blob
+                const byteCharacters = atob(result.file);
+                const byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+
+                const byteArray = new Uint8Array(byteNumbers);
+                const blob = new Blob([byteArray], { type: "application/pdf" });
+
+                const filename = buildFileName(md_content, 'pdf');
+
+                // 选择保存目录
+                const saved = await saveFile(blob, filename, 'application/pdf');
+
+                if (saved) {
+                    layer.msg('PDF 导出成功');
+                } else {
+                    layer.msg('已取消保存');
+                }
+
+            } catch (err) {
+                console.error('PDF 导出异常:', err);
+                layer.msg('PDF 导出失败');
+            } finally {
+                layer.close(layerIndex);
+            }
+        }
+
+        async function export_markdown() {
+            var md_content = editor.getMarkdown();
+
+            if (!md_content) {
+                layui.use(function () {
+                    var layer = layui.layer;
+                    layer.msg('请先编辑内容');
+                });
+                return;
+            }
+
+            var layerIndex = layer.load(2, { shade: [0.5, '#000'] });
+
+            try {
+                const result = await $.ajax({
+                    url: '/api/md/mdFile',
+                    type: 'POST',
+                    data: JSON.stringify({ md_content: md_content }),
+                    contentType: 'application/json; charset=utf-8'
+                });
+
+                if (!result.success) {
+                    layer.msg('markdown导出失败');
+                    return;
+                }
+
+                // Base64 → Blob
+                const byteCharacters = atob(result.file);
+                const byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+
+                const byteArray = new Uint8Array(byteNumbers);
+                const blob = new Blob([byteArray], { type: "text/markdown" });
+
+                const filename = buildFileName(md_content, 'md');
+
+                // 选择保存目录
+                const saved = await saveFile(blob, filename, 'text/markdown');
+
+                if (saved) {
+                    layer.msg('Markdown 导出成功');
+                } else {
+                    layer.msg('已取消保存');
+                }
+
+            } catch (err) {
+                console.error('Markdown 导出异常:', err);
+                layer.msg('Markdown 导出失败');
+            } finally {
+                layer.close(layerIndex);
             }
         }
 
@@ -767,12 +822,12 @@
                 var layer = layui.layer;
                 var layerIndex = null;
                 var uploadInst = upload.render({
-                    elem: '#importFile', 
-                    url: '/api/md/importFile', 
-                    accept: 'file', 
-                    exts: 'docx|xlsx|xls|ods|csv|tsv|html|mhtml|htm|pptx|md', 
-                    field: 'file', 
-                    auto: true, 
+                    elem: '#importFile',
+                    url: '/api/md/importFile',
+                    accept: 'file',
+                    exts: 'docx|xlsx|xls|ods|csv|tsv|html|mhtml|htm|pptx|md',
+                    field: 'file',
+                    auto: true,
                     method: 'post',
                     before: function () {
                         // 开启加载层
@@ -799,7 +854,7 @@
                         layer.msg('上传失败，请检查网络或接口');
                     }
                 });
-                // 强制覆盖layui自动创建的上传input的accept属性（浏览器级精准筛选）
+                // 强制覆盖layui自动创建的上传input的accept属性
                 // 延迟执行，确保layui已经生成了对应的input元素
                 setTimeout(function () {
                     // layui自动创建的上传input会绑定在按钮同级，class为layui-upload-file

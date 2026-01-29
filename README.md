@@ -35,6 +35,8 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 3、双击下载的 msi 文件，一路点击「Next」，建议勾选「Add pandoc to the system PATH for all users」（自动配置环境变量，否则需要手动配）；
 
 ### 安装导出 Pdf文档所需要的工具 wkhtmltopdf(Windows系统)
+官方下载地址统一：https://github.com/wkhtmltopdf/packaging/releases 官方 GitHub Releases
+
 1、选择并下载安装包
 打开官方 Releases 页，找到Windows对应版本，根据自己的系统选择：
 64 位系统（绝大多数电脑）：下载命名为 wkhtmltox-x.x.x_msvc2015-win64.exe 的文件（x.x.x 为最新版本号）；
