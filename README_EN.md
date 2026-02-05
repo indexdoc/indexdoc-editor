@@ -4,82 +4,111 @@
 
 ---
 # indexdoc-editor
-A lightweight Markdown editor tailored for technical writing, featuring real-time preview, formating optimization capabilities that precisely meet the needs of technical document creation. It supports exporting content to Word, PDF, and Markdown formats, one-click copying of Markdown text, and is compatible with importing files in multiple formats (.docx, .xlsx, .xls, .ods, .csv, .tsv, .html, .mhtml, .htm, .pptx, .md).
+A lightweight Markdown editor specifically designed for technical writing, **supporting both desktop (Windows) and web versions** with real-time preview to precisely meet the needs of technical documentation creation. It allows exporting content to Word, PDF, and Markdown formats, one-click copying of Markdown text, and supports importing files in multiple formats ( ** .docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md ** ).
 
 [![Python Version](https://img.shields.io/badge/python-3.10+-green.svg)](https://www.python.org/)  [![GitHub Stars](https://img.shields.io/github/stars/indexdoc/indexdoc-editor?style=social)](https://github.com/indexdoc/indexdoc-editor.git)
 
 ## ✨ Core Features
-- 🔍 **Real-time Preview & Editing**: Lightweight core Markdown editing with side-by-side rendering previews for instant typesetting verification during technical writing
-- 📤 **Multi-format Export**: One-click export of content to Word, PDF and Markdown files to meet diverse output requirements
-- 📋 **One-click Copy**: Instant copying of raw Markdown text for cross-platform pasting and usage
-- 📥 **Multi-type Import**: Compatible with importing files in .docx, .xlsx, .xls, .ods, .csv, .tsv, .html, .mhtml, .htm, .pptx and .md formats for efficient content migration
+- 🔍 **Real-time Preview & Editing**: Lightweight Markdown editing core with side-by-side rendering preview, enabling instant format verification for technical writing
+- 💻 **Multi-end Support**: Provides both **desktop (Windows)** and web versions, covering local offline and online collaboration scenarios
+- 📤 **Multi-format Export**: One-click export of content to Word, PDF, and Markdown files to meet diverse output requirements
+- 📋 **Quick Copy**: One-click copying of raw Markdown text for cross-platform pasting
+- 📥 **Full-type Import**: Compatible with importing files in .docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md formats for efficient content migration
 
-## 🚀 Quick Start
+##  🚀 Quick Start
 
 ### Environment Preparation
 - Python 3.10+, Tornado 6.0+
-- Browsers: Chrome, Firefox, Edge and other mainstream browsers
+- Browsers: Chrome, Firefox, Edge, and other mainstream browsers
 
 ```bash
-# Clone the repository
+# Clone repository
 https://github.com/indexdoc/indexdoc-editor.git
 ```
 ```bash
 # Install dependencies quickly
 pip install -r requirements.txt
 
-# Use Alibaba Cloud PyPI mirror (faster installation)
+# Aliyun PyPI mirror
 pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 ```
 
-### Install pandoc (Windows) - Required for Word Export
-1. Visit the official pandoc download page: https://github.com/jgm/pandoc/releases/latest
-2. Locate the installer named `pandoc-x.x.x-windows-x86_64.msi` (x.x.x refers to the latest version number) and click to download
-3. Double-click the downloaded MSI file and follow the **Next** prompts; it is recommended to check **Add pandoc to the system PATH for all users** (automatically configures environment variables, manual configuration required if unchecked)
+### Install pandoc (Windows) for Word Export
+1. Open the official pandoc download page: https://github.com/jgm/pandoc/releases/latest
+2. Find the installer named pandoc-x.x.x-windows-x86_64.msi (x.x.x is the latest version number) and click to download
+3. Double-click the downloaded msi file and click "Next" throughout the installation. It is recommended to check "Add pandoc to the system PATH for all users" (automatically configures environment variables; manual configuration is required if unchecked)
 
-### Install wkhtmltopdf (Windows) - Required for PDF Export
+### Install wkhtmltopdf (Windows) for PDF Export
 Official unified download address: https://github.com/wkhtmltopdf/packaging/releases (Official GitHub Releases)
 
 1. Select and download the installer
-   Open the official Releases page, find the Windows version and select according to your system:
-   - 64-bit systems (most computers): Download the file named `wkhtmltox-x.x.x_msvc2015-win64.exe` (x.x.x is the latest version number)
-   - 32-bit systems (older computers): Download `wkhtmltox-x.x.x_msvc2015-win32.exe`
+Open the official Releases page, find the Windows version corresponding to your system:
+- 64-bit systems (most computers): Download the file named wkhtmltox-x.x.x_msvc2015-win64.exe (x.x.x is the latest version number)
+- 32-bit systems (older computers): Download the file named wkhtmltox-x.x.x_msvc2015-win32.exe
 
 2. Install and configure environment variables automatically
-   Double-click the downloaded EXE installer and follow the **Next** prompts
-   **Critical step**: Check the option for **Add to PATH** (or **Add application directory to your system PATH**) during installation (usually checked by default, just confirm)
-   Select the installation path (default C drive is recommended, no modification needed) and click **Install** to complete the installation
+Double-click the downloaded exe installer and click "Next" throughout;
+Critical step: The installation interface will have an option "Add to PATH" (or "Add application directory to your system PATH") – **make sure to check it** (usually checked by default, just confirm);
+Select the installation path (default C drive is recommended, no need to modify), then click "Install" to complete installation.
 
-3. Verify the installation
+3. Verify installation
 ```bash
-wkhtmltopdf --version
+  wkhtmltopdf --version
 ```
 
-### Configuration (config.py)
-
+### Configuration
+##### Web Service Configuration (config.py)
 | Configuration Item | Type | Default Value | Description |
-|--------------------|------|---------------|-------------|
+|--------|------|--------|------|
 | `port` | int | `50003` | Backend service access port |
-| Path Configuration | string | - | Includes `html_path` (frontend page path), `tmp_path` (temporary file path), `rpt_path` (report path), `user_file_path` (user uploaded file path), `log_path` (log file path). The program automatically creates non-existent directories on startup |
+| Path Configuration | string | - | Includes `html_path` (frontend page path), `tmp_path` (temporary file path), `rpt_path` (report path), `user_file_path` (user uploaded file path), `log_path` (log file path). Non-existent directories are automatically created on program startup |
 
-### Start the Service
+##### Desktop Service Configuration (client_config.py)
+| Configuration Item | Type | Default Value | Description |
+|--------|------|--------|------|
+| `port` | int | `50001` | Backend service access port |
+| `base_path` | string | Dynamically obtained by `frozen_support.get_base_path()` | Project root path; all path configurations are concatenated based on this path |
+| `html_path` | string | `base_path + '/html'` | Root path for frontend HTML files |
+| `template_path` | string | `base_path + '/template'` | Storage path for template files |
+| `tmp_path` | string | `base_path + '/tmp'` | Storage path for temporary files |
+| `log_path` | string | `base_path + '/log'` | Storage path for log files; automatically created if the path does not exist |
+
+** Note: The configuration and operation of the web version and desktop version are independent of each other. Incorrect configuration of the web version does not affect the operation of the desktop version, and vice versa. **
+
+### Start Service
+##### Start Web Version
 ```bash
-cd src  # Replace with the actual folder path where server.py is located
+cd src  # Replace with the actual folder path of server.py
 python.exe server.py
 ```
+
+##### Start Desktop Version
+```bash
+cd src_client  # Replace with the actual folder path of client_start.py
+python.exe client_start.py
+
+# In the client_start.py file, debug mode is enabled by default
+webview.start(debug=True) #debug=False to disable debug mode
+```
+
 **Access Address**
-Local access: `http://127.0.0.1:50003/public/cherry_markdown/markdown.html`
+- Web version local access: `http://127.0.0.1:50003/public/cherry_markdown/markdown.html`
+- Desktop version: Simply run client_start.py
 
 ## 📝 Usage Examples
-![Main Page](https://github.com/indexdoc/indexdoc-editor/raw/main/mainPage.png)
+###  Web Version Usage Examples
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/mainPage.png)
 #### Text Operations
-![Text Operations](https://github.com/indexdoc/indexdoc-editor/raw/main/wordProcessing.png)
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/wordProcessing.png)
 #### Chart Operations
-![Chart Operations](https://github.com/indexdoc/indexdoc-editor/raw/main/chartActions.png)
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/chartActions.png)
 #### File Import
-**Compatible with importing .docx, .xlsx, .xls, .ods, .csv, .tsv, .html, .mhtml, .htm, .pptx and .md files**
-![File Import](https://github.com/indexdoc/indexdoc-editor/raw/main/importFile.png)
+**Compatible with importing files in .docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md formats**
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/importFile.png)
 
-## 📞 Contact Us
-- Author: Hangzhou Zhiyu Shu Information Technology Co., Ltd.
+###  Desktop Version Usage Examples
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/clientMainPage.png)
+
+## 📞 Contact Information
+- Author: Hangzhou Zhiyushu Information Technology Co., Ltd.
 - Email: indexdoc@qq.com
