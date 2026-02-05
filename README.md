@@ -75,7 +75,7 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 | `tmp_path` | string | `base_path + '/tmp'` | 临时文件存储路径 |
 | `log_path` | string | `base_path + '/log'` | 日志文件存储路径，若路径不存在会自动创建 |
 
-** 注意：网页端和服端的配置和运行相互独立，如 网页端配置未正确不影响客户端运行，反之亦然。 **
+ ** 注意：网页端和服端的配置和运行相互独立，如 网页端配置未正确不影响客户端运行，反之亦然。 **
 ### 启动服务
 ##### 网页端启动
 ```bash
