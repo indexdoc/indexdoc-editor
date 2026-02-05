@@ -97,17 +97,17 @@ webview.start(debug=True) #debug=False to disable debug mode
 
 ## 📝 Usage Examples
 ###  Web Version Usage Examples
-![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/mainPage.png)
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/mainPage.png)
 #### Text Operations
-![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/wordProcessing.png)
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/wordProcessing.png)
 #### Chart Operations
-![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/chartActions.png)
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/chartActions.png)
 #### File Import
 **Compatible with importing files in .docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md formats**
-![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/importFile.png)
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/importFile.png)
 
 ###  Desktop Version Usage Examples
-![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/clientMainPage.png)
+![Main Page 1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/clientMainPage.png)
 
 ## 📞 Contact Information
 - Author: Hangzhou Zhiyushu Information Technology Co., Ltd.

@@ -100,17 +100,17 @@ webview.start(debug=True) #debug=False 关闭调试模式
 
 ## 📝 使用示例
 ###  网页端使用示例
-![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/mainPage.png)
+![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/mainPage.png)
 #### 文字操作
-![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/wordProcessing.png)
+![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/wordProcessing.png)
 #### 图表操作
-![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/chartActions.png)
+![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/chartActions.png)
 #### 导入文件
 **兼容.docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md多格式文件导入**
-![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/importFile.png)
+![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/importFile.png)
 
 ###  客户端使用示例
-![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/clientMainPage.png)
+![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/README/clientMainPage.png)
 ## 📞 联系方式
 
 - 作者：杭州智予数信息技术有限公司
