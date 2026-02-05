@@ -1,0 +1,558 @@
+20260203 162337:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET / (::1) 3.00ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 45.74ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 2.00ms
+20260203 162338:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 162338:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 2.01ms
+20260203 162338:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 162338:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 3.00ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 3.00ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 4.00ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 8.24ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 11.25ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 54.24ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 55.25ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 106.30ms
+20260203 162338:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 2.00ms
+20260203 162338:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 0.00ms
+20260203 162339:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 99.08ms
+20260203 162339:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 1.00ms
+20260203 162359:INFO:FILE(web.py log_request 2418):200 POST /api/md/importFile (::1) 6.99ms
+20260203 162414:INFO:FILE(web.py log_request 2418):200 POST /api/md/importFile (::1) 3.00ms
+20260203 162541:INFO:FILE(web.py log_request 2418):200 POST /api/md/importFile (::1) 261.24ms
+20260203 162604:INFO:FILE(web.py log_request 2418):200 POST /api/md/importFile (::1) 13.70ms
+20260203 162608:INFO:FILE(entry.py convert 31):conversion started
+20260203 162609:INFO:FILE(entry.py convert 51):converted document saved to C:\Users\e-admin\AppData\Local\Temp\fd65c51300d911f1a0ebbc2411ecbf31.md
+20260203 162619:INFO:FILE(web.py log_request 2418):200 POST /api/md/importFile (::1) 10889.77ms
+20260203 162627:INFO:FILE(web.py log_request 2418):200 POST /api/md/importFile (::1) 4.00ms
+20260203 162631:INFO:FILE(web.py log_request 2418):200 POST /api/md/importFile (::1) 562.48ms
+20260203 163304:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 163305:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET / (::1) 1.99ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 46.01ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 1.01ms
+20260203 163306:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 163306:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 1.99ms
+20260203 163306:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 163306:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 1.99ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 3.99ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 5.99ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 5.99ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 10.00ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 58.00ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 3.99ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 99.04ms
+20260203 163306:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 1.99ms
+20260203 163306:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 1.00ms
+20260203 163307:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 104.50ms
+20260203 163308:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 2.00ms
+20260203 163400:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 163401:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET / (::1) 10.01ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 38.99ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 3.00ms
+20260203 163402:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 163402:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 163402:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 3.99ms
+20260203 163402:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 3.00ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 3.99ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 15.89ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 16.90ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 19.89ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 78.89ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 78.90ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 114.89ms
+20260203 163402:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 4.00ms
+20260203 163403:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 1.01ms
+20260203 163404:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 116.00ms
+20260203 163404:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 2.00ms
+20260203 163537:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 163538:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET / (::1) 8.12ms
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 39.17ms
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 3.01ms
+20260203 163539:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 163539:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 163539:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 4.00ms
+20260203 163539:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 2.00ms
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 4.98ms
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 12.70ms
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 12.70ms
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 15.71ms
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 61.76ms
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 79.12ms
+20260203 163539:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 105.95ms
+20260203 163540:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 3.41ms
+20260203 163540:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 2.00ms
+20260203 163541:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 114.87ms
+20260203 163541:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 0.00ms
+20260203 163614:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 163614:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET / (::1) 8.11ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 38.04ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 2.00ms
+20260203 163615:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 163615:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 163615:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 3.00ms
+20260203 163615:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 1.99ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 10.83ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 11.16ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 15.00ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 18.00ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 81.81ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 4.00ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 115.81ms
+20260203 163615:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 4.06ms
+20260203 163616:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 1.00ms
+20260203 163617:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 120.21ms
+20260203 163617:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 2.00ms
+20260203 163800:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 163800:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET / (::1) 3.00ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 35.00ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 2.00ms
+20260203 163801:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 163801:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 163801:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 65.88ms
+20260203 163801:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 1.00ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 4.00ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 6.00ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 7.00ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 11.00ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 53.00ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 52.99ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 81.99ms
+20260203 163801:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 2.00ms
+20260203 163801:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 0.00ms
+20260203 163802:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 93.69ms
+20260203 163803:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 3.00ms
+20260203 163805:ERROR:FILE(event.py execute 49):[WinError 5] 拒绝访问。: 'D:\\Open Source Projects\\indexdoc-editor\\tmp'
+Traceback (most recent call last):
+  File "D:\Open Source Projects\indexdoc-editor\.venv\lib\site-packages\webview\event.py", line 41, in execute
+    value = func()
+  File "D:\Open Source Projects\indexdoc-editor\src_client\client_start.py", line 24, in on_close
+    os.remove(tmp_path)
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\Open Source Projects\\indexdoc-editor\\tmp'
+20260203 163951:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 163952:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 163952:INFO:FILE(web.py log_request 2418):200 GET / (::1) 1.99ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 43.00ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 2.00ms
+20260203 163953:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 163953:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 2.01ms
+20260203 163953:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 163953:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 3.01ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 2.00ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 7.00ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 12.00ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 14.00ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 64.96ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 72.96ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 76.97ms
+20260203 163953:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 2.01ms
+20260203 163953:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 1.00ms
+20260203 163954:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 97.61ms
+20260203 163954:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 1.99ms
+20260203 164038:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 164038:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET / (::1) 2.05ms
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 40.00ms
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 1.99ms
+20260203 164039:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 164039:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 164039:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 68.39ms
+20260203 164039:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 1.00ms
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 4.03ms
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 8.00ms
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 9.00ms
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 11.04ms
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 60.15ms
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 70.16ms
+20260203 164039:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 95.15ms
+20260203 164040:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 2.00ms
+20260203 164040:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 1.00ms
+20260203 164041:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 90.22ms
+20260203 164041:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 1.99ms
+20260203 164053:INFO:FILE(entry.py convert 31):conversion started
+20260203 164054:INFO:FILE(entry.py convert 51):converted document saved to C:\Users\e-admin\AppData\Local\Temp\0d1d7b6400dc11f18d5fbc2411ecbf31.md
+20260203 164104:INFO:FILE(web.py log_request 2418):200 POST /api/md/importFile (::1) 10880.99ms
+20260203 170049:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 170049:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET / (::1) 1.99ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 44.35ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 2.00ms
+20260203 170050:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 170050:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 0.99ms
+20260203 170050:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 170050:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 2.99ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 3.98ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 6.00ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 10.00ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 13.00ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 57.00ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 57.00ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 80.01ms
+20260203 170050:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 2.00ms
+20260203 170051:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 0.99ms
+20260203 170051:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 92.47ms
+20260203 170052:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 2.00ms
+20260203 170111:INFO:FILE(web.py log_request 2418):200 POST /api/md/importFile (::1) 256.77ms
+20260203 170200:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 170201:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET / (::1) 2.99ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 47.13ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 2.01ms
+20260203 170202:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 170202:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 2.00ms
+20260203 170202:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 170202:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 3.00ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 3.00ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 5.01ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 5.99ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 8.99ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 2.00ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 65.00ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 82.01ms
+20260203 170202:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 2.00ms
+20260203 170202:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 0.98ms
+20260203 170203:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 100.25ms
+20260203 170203:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 1.00ms
+20260203 170339:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 170339:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET / (::1) 2.96ms
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 42.93ms
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 2.01ms
+20260203 170340:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 170340:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 1.00ms
+20260203 170340:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 170340:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 3.00ms
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 3.00ms
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 6.00ms
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 9.99ms
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 11.96ms
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 55.02ms
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 56.97ms
+20260203 170340:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 100.98ms
+20260203 170341:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 2.21ms
+20260203 170341:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 0.98ms
+20260203 170342:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 97.99ms
+20260203 170342:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 1.00ms
+20260203 170940:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 170941:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 170941:INFO:FILE(web.py log_request 2418):200 GET / (::1) 2.00ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 44.92ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 1.99ms
+20260203 170942:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 170942:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 170942:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 63.65ms
+20260203 170942:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 2.00ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 3.00ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 8.31ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 8.30ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 10.47ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 39.25ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 53.24ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 78.22ms
+20260203 170942:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 1.99ms
+20260203 170942:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 1.00ms
+20260203 170943:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 98.86ms
+20260203 170943:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 1.01ms
+20260203 171005:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/images/demo-dog.png (::1) 4.00ms
+20260203 171006:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo-dog.png (::1) 1.01ms
+20260203 171006:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 1.99ms
+20260203 171006:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80 (::1) 1.00ms
+20260203 171006:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 1.01ms
+20260203 171006:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo-dog.png (::1) 1.00ms
+20260203 171006:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_font.png (::1) 1.00ms
+20260203 171006:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo-dog.png (::1) 1.00ms
+20260203 171006:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_font.png (::1) 1.01ms
+20260203 171006:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo-dog.png (::1) 2.01ms
+20260203 171008:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/images/demo-dog.png (::1) 1.00ms
+20260203 171008:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo-dog.png (::1) 2.00ms
+20260203 171008:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 1.00ms
+20260203 171008:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 1.00ms
+20260203 171008:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80 (::1) 2.02ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/images/demo-dog.png (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo-dog.png (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80 (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 2.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_cursor.gif (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_image_wysiwyg.gif (::1) 1.01ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_cursor.gif (::1) 1.56ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_image_wysiwyg.gif (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_cursor.gif (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_image_wysiwyg.gif (::1) 2.01ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_export.png (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_image_wysiwyg.gif (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_export.png (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_myers.png (::1) 1.02ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_export.png (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_myers.png (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_export.png (::1) 2.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_myers.png (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_vdom.gif (::1) 0.93ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_myers.png (::1) 2.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_vdom.gif (::1) 1.02ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_vdom.gif (::1) 1.00ms
+20260203 171011:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_vdom.gif (::1) 1.97ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_br.gif (::1) 0.99ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_cursor.gif (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_br.gif (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_br.gif (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_br.gif (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_copy.gif (::1) 2.01ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_copy.gif (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_copy.gif (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_copy.gif (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_image_size.png (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_table_chart.png (::1) 1.01ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_image_size.png (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_table_chart.png (::1) 0.99ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_image_size.png (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_table_chart.png (::1) 0.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_image_size.png (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_table_chart.png (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_font.png (::1) 1.00ms
+20260203 171014:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_font.png (::1) 1.01ms
+20260203 171016:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_copy.gif (::1) 1.01ms
+20260203 171016:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/feature_font.png (::1) 2.00ms
+20260203 171106:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/images/demo-dog.png (::1) 2.00ms
+20260203 171106:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo-dog.png (::1) 0.99ms
+20260203 171106:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 2.00ms
+20260203 171106:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 2.00ms
+20260203 171106:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80 (::1) 2.00ms
+20260203 171120:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/images/demo-dog.png (::1) 0.99ms
+20260203 171120:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo-dog.png (::1) 2.00ms
+20260203 171120:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80 (::1) 2.99ms
+20260203 171120:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 3.00ms
+20260203 171120:WARNING:FILE(web.py log_request 2418):404 GET /client/public/cherry_markdown/assets/images/demo.mp4 (::1) 2.01ms
+20260203 171752:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 171752:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET / (::1) 1.99ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 42.00ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 2.00ms
+20260203 171753:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 171753:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 171753:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 171753:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 71.00ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 2.00ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 3.77ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 4.63ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 8.00ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 71.99ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 72.99ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 5.99ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 86.99ms
+20260203 171753:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 2.00ms
+20260203 171753:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 1.00ms
+20260203 171754:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 112.14ms
+20260203 171755:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 3.00ms
+20260203 172651:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 172651:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50004
+20260203 172716:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 41.51ms
+20260203 172717:WARNING:FILE(server.py custom_log_request 37):404 GET /favicon.ico (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.00ms
+20260203 172725:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/cherry-markdown.js.map (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 369.29ms
+20260203 172916:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 172918:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 172918:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50004
+20260203 172919:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 31.25ms
+20260203 172940:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 172952:WARNING:FILE(server.py custom_log_request 37):404 GET /favicon.ico (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 173039:INFO:FILE(ToWordUtil.py str2docx 74): 成功生成 Word 文件: D:\Open Source Projects\indexdoc-editor/user_file/export/341a304d19c543c98196dee275f0850d.docx
+20260203 173039:INFO:FILE(server.py custom_log_request 37):200 POST /api/md/mdWord (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 1906.71ms
+20260203 173042:INFO:FILE(ToWordUtil.py html2pdf 100): 使用 PDF 引擎: wkhtmltopdf
+20260203 173045:INFO:FILE(ToWordUtil.py html2pdf 116): 成功生成 PDF: D:\Open Source Projects\indexdoc-editor/user_file/export/4d0d610eb9fa468cbff2ebb8a9081545.docx
+20260203 173045:INFO:FILE(server.py custom_log_request 37):200 POST /api/md/mdPdf (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2593.85ms
+20260203 173053:INFO:FILE(server.py custom_log_request 37):200 POST /api/md/importFile (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 416.28ms
+20260203 173056:INFO:FILE(server.py custom_log_request 37):200 POST /api/md/importFile (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 15.62ms
+20260203 173101:INFO:FILE(server.py custom_log_request 37):200 POST /api/md/importFile (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 3.14ms
+20260203 173106:INFO:FILE(entry.py convert 31):conversion started
+20260203 173106:INFO:FILE(server.py custom_log_request 37):200 POST /api/md/importFile (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 924.86ms
+20260203 173137:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173213:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 173215:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173215:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50004
+20260203 173220:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173226:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173239:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\src\config.py modified; restarting server
+20260203 173242:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173242:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50003
+20260203 173244:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173254:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\src\config.py modified; restarting server
+20260203 173257:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173257:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 173257:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173308:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 42.42ms
+20260203 173308:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/css/layui.css (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.01ms
+20260203 173308:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/css/fontAwesome.css (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 4.00ms
+20260203 173308:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/cherry-markdown.css (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 38.99ms
+20260203 173309:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/jquery-2.1.1.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 3.99ms
+20260203 173309:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/tailwind.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 57.27ms
+20260203 173309:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/layui.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 54.28ms
+20260203 173309:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/mermaid.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 75.03ms
+20260203 173309:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/cherry-markdown.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 176.06ms
+20260203 173309:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/font/fontawesome-webfont.woff2?v=4.7.0 (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.99ms
+20260203 173309:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/fonts/ch-icon.woff2 (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 3.00ms
+20260203 173309:WARNING:FILE(server.py custom_log_request 37):404 GET /favicon.ico (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.18ms
+20260203 173314:INFO:FILE(entry.py convert 31):conversion started
+20260203 173314:INFO:FILE(entry.py convert 51):converted document saved to C:\Users\e-admin\AppData\Local\Temp\5ce6186a00e311f1a853bc2411ecbf31.md
+20260203 173324:INFO:FILE(server.py custom_log_request 37):200 POST /api/md/importFile (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 10989.23ms
+20260203 173343:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 173346:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173346:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 173346:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 31.24ms
+20260203 173703:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 173705:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173705:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 173734:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 173736:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173736:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 173751:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 41.54ms
+20260203 173812:INFO:FILE(server.py custom_log_request 37):304 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 173853:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 173855:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 173855:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 173907:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 31.25ms
+20260203 174056:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 174059:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 174059:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 174059:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 38.52ms
+20260203 174105:INFO:FILE(server.py custom_log_request 37):304 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 174220:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 174222:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 174222:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 174227:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 31.24ms
+20260203 174301:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 174303:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 174303:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 174349:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 174351:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 174351:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 174352:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 37.80ms
+20260203 174405:INFO:FILE(server.py custom_log_request 37):304 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 174530:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 174533:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 174533:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 174659:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 174701:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 174701:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 174701:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 31.26ms
+20260203 174730:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 174730:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/cherry-markdown.css (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 15.69ms
+20260203 174730:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/css/layui.css (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 174730:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/css/fontAwesome.css (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 174731:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/jquery-2.1.1.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 4.00ms
+20260203 174731:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/layui.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 147.51ms
+20260203 174731:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/tailwind.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 172.85ms
+20260203 174731:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/mermaid.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 72.23ms
+20260203 174731:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/cherry-markdown.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 281.91ms
+20260203 174731:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/font/fontawesome-webfont.woff2?v=4.7.0 (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 15.06ms
+20260203 174731:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/fonts/ch-icon.woff2 (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.00ms
+20260203 174731:WARNING:FILE(server.py custom_log_request 37):404 GET /favicon.ico (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.00ms
+20260203 175013:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 175015:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175015:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 175025:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 175028:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175028:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 175050:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 175052:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175052:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 175155:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 175158:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175158:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 175159:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 31.23ms
+20260203 175432:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 175435:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175435:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 175435:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 29.73ms
+20260203 175521:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175542:INFO:FILE(tornado_server.py start_tornado 31):Tornado Web Server Start at Port 8080
+20260203 175542:DEBUG:FILE(winforms.py <module> 126):Using WinForms / Chromium
+20260203 175543:INFO:FILE(web.py log_request 2418):200 GET / (::1) 2.99ms
+20260203 175543:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/layui.css (::1) 45.01ms
+20260203 175543:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/iconfont.woff2?v=293 (::1) 2.00ms
+20260203 175543:DEBUG:FILE(util.py inject_pywebview 240):before_load event fired. injecting pywebview object
+20260203 175543:DEBUG:FILE(util.py load_js_files 350):Loading JS files from D:\Open Source Projects\indexdoc-editor\.venv\Lib\site-packages\webview\js
+20260203 175543:INFO:FILE(web.py log_request 2418):200 GET /favicon.ico (::1) 2.00ms
+20260203 175543:DEBUG:FILE(util.py generate_js_object 227):_pywebviewready event fired
+20260203 175543:DEBUG:FILE(util.py generate_js_object 234):loaded event fired
+20260203 175543:INFO:FILE(web.py log_request 2418):200 GET /client/public/cherry_markdown/markdown.html (::1) 2.99ms
+20260203 175544:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.css (::1) 3.00ms
+20260203 175544:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/tailwind.js (::1) 7.00ms
+20260203 175544:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/css/fontAwesome.css (::1) 8.05ms
+20260203 175544:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/layui.js (::1) 9.77ms
+20260203 175544:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/mermaid.js (::1) 56.37ms
+20260203 175544:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/js/jquery-2.1.1.js (::1) 59.37ms
+20260203 175544:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js (::1) 77.39ms
+20260203 175544:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/font/fontawesome-webfont.woff2?v=4.7.0 (::1) 1.99ms
+20260203 175544:WARNING:FILE(web.py log_request 2418):404 GET /.well-known/appspecific/com.chrome.devtools.json (::1) 1.00ms
+20260203 175545:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/cherry-markdown.js.map (::1) 99.18ms
+20260203 175545:INFO:FILE(web.py log_request 2418):200 GET /client/public/static/cherry-markdown/fonts/ch-icon.woff2 (::1) 1.99ms
+20260203 175655:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 175657:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175657:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50005
+20260203 175708:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175728:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\src\config.py modified; restarting server
+20260203 175730:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175730:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50003
+20260203 175730:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 40.31ms
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/css/fontAwesome.css (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.99ms
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/css/layui.css (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 26.69ms
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/cherry-markdown.css (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 51.87ms
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/layui.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 45.86ms
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/jquery-2.1.1.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.00ms
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/tailwind.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 65.09ms
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/js/mermaid.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 69.05ms
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/font/fontawesome-webfont.woff2?v=4.7.0 (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.00ms
+20260203 175737:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/cherry-markdown.js (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 300.54ms
+20260203 175738:INFO:FILE(server.py custom_log_request 37):200 GET /public/static/cherry-markdown/fonts/ch-icon.woff2 (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 1.23ms
+20260203 175738:WARNING:FILE(server.py custom_log_request 37):404 GET /favicon.ico (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.00ms
+20260203 175741:INFO:FILE(server.py custom_log_request 37):304 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.21ms
+20260203 180745:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 180748:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 180748:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50003
+20260203 180810:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 180813:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 180813:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50003
+20260203 180825:INFO:FILE(server.py custom_log_request 37):200 GET /public/cherry_markdown/markdown.html (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 39.24ms
+20260203 180837:INFO:FILE(autoreload.py _check_file 197):D:\Open Source Projects\indexdoc-editor\html\pc\public\cherry_markdown\markdown.html modified; restarting server
+20260203 180839:INFO:FILE(server.py <module> 87):Tornado Web Server Starting ......
+20260203 180839:INFO:FILE(server.py <module> 90):Tornado Web Server Start at Port 50003
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/images/demo-dog.png (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/assets/images/demo-dog.png (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.00ms
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/assets/images/feature_font.png (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 1.00ms
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/assets/images/demo-dog.png (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 2.00ms
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/assets/images/demo.mp4 (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 1.00ms
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80 (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 1.00ms
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/assets/images/demo.mp4 (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 1.00ms
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/assets/images/feature_font.png (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/assets/images/demo-dog.png (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 15.69ms
+20260203 180845:WARNING:FILE(server.py custom_log_request 37):404 GET /public/cherry_markdown/assets/images/feature_font.png (192.168.0.109) (X-Real-IP=-, X-Forwarded-For=-) 0.00ms

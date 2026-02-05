@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Markdown编辑器</title>
+    <title>indexdoc-editor</title>
     <link rel="stylesheet" type="text/css" href="../static/cherry-markdown/cherry-markdown.css">
     <script src="../static/js/tailwind.js"></script>
     <link href="../static/css/fontAwesome.css" rel="stylesheet">
@@ -116,10 +116,6 @@
             z-index: 999;
         }
 
-
-
-
-
         .titleCon {
             position: absolute;
             width: 100%;
@@ -203,7 +199,6 @@
             padding-top: 0px;
         }
 
-
         .cherry-previewer .cherry-editor-title {
             position: sticky;
             top: 0;
@@ -214,6 +209,174 @@
 
         .cherry-previewer {
             padding-right: 0px !important;
+        }
+
+        .CodeMirror-sizer {
+            margin-bottom: 0px !important;
+        }
+
+        .CodeMirror-scroll {
+            padding-bottom: 0px !important;
+        }
+
+        /* ========== 右侧悬浮目录样式 ========== */
+        .cherry-flex-toc {
+            position: fixed;
+            top: 100px;
+            right: 0;
+            width: 160px;
+            max-width: 300px;
+            max-height: calc(100vh - 120px);
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px 8px 8px 8px;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: width 0.3s ease-out, box-shadow 0.2s ease;
+            z-index: 9999;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        /* 鼠标悬浮时展开完整宽度 */
+        .cherry-flex-toc:hover {
+            width: 300px;
+            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 隐藏状态 */
+        .cherry-flex-toc.hidden {
+            display: none;
+        }
+
+        /* 显示/隐藏切换按钮 */
+        .toc-toggle-btn {
+            position: fixed;
+            top: 100px;
+            right: 0;
+            width: 30px;
+            height: 40px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px 0 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9998;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+            display: none;
+        }
+
+        .toc-toggle-btn.show {
+            display: flex;
+        }
+
+        .toc-toggle-btn span {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        .cherry-toc-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .cherry-toc-title {
+            font-weight: 600;
+            color: #5798f3;
+            font-size: 14px;
+        }
+
+        .ch-icon {
+            color: #94a3b8;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .ch-icon:hover {
+            color: #2563eb;
+        }
+
+        .cherry-toc-list {
+            padding: 10px 0;
+            overflow-y: auto;
+            max-height: calc(100vh - 180px);
+            overflow-x: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cherry-toc-one-a {
+            display: block;
+            padding: 0 15px;
+            line-height: 28px;
+            color: #475569;
+            font-size: 13px;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: background 0.2s, color 0.2s;
+            cursor: pointer;
+            height: 28px !important;
+            box-sizing: border-box;
+        }
+
+        .cherry-toc-one-a__1 {
+            padding-left: 15px;
+            font-weight: 600;
+        }
+
+        .cherry-toc-one-a__2 {
+            padding-left: 30px;
+        }
+
+        .cherry-toc-one-a__3 {
+            padding-left: 45px;
+        }
+
+        .cherry-toc-one-a__4 {
+            padding-left: 60px;
+        }
+
+        .cherry-toc-one-a:hover {
+            background-color: #f1f5f9;
+            color: #2563eb;
+        }
+
+        .cherry-toc-one-a.current {
+            background-color: #eff6ff;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* 图标占位 */
+        .ch-icon-chevronsRight::before {
+            content: "»";
+        }
+
+        .ch-icon-chevronsLeft::before {
+            content: "«";
+        }
+
+        /* 优化滚动条 */
+        .cherry-toc-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        .cherry-toc-list::-webkit-scrollbar-thumb {
+            background-color: #ddd;
+            border-radius: 2px;
+        }
+        .cherry-toc-list::-webkit-scrollbar-track {
+            background: transparent;
         }
     </style>
 </head>
@@ -249,6 +412,20 @@
                 <div id="editor" style="height: 106%;border:1px solid rgba(0,0,0,0.03)"></div>
             </div>
         </div>
+
+        <!-- 目录显示/隐藏切换按钮 -->
+        <div class="toc-toggle-btn" id="tocToggleBtn">
+            <span>«</span>
+        </div>
+
+        <!-- 右侧悬浮目录 -->
+        <div class="cherry-flex-toc cherry-flex-toc__full" id="tocContainer">
+            <div class="cherry-toc-head">
+                <span class="cherry-toc-title">目录</span>
+                <i class="ch-icon ch-icon-chevronsRight" id="hideTocBtn"></i>
+            </div>
+            <div class="cherry-toc-list" id="tocListContainer"></div>
+        </div>
     </div>
 
     <script src="../static/js/layui.js"></script>
@@ -269,16 +446,169 @@
         let headings = [];
         let cm;
 
+        // ========== 动态目录列表==========
+        let tocItems = []; 
+        const TOP_OFFSET = 120;
+
+        /**
+         * 防抖函数：避免频繁更新目录导致抖动
+         */
+        function debounce(fn, delay = 300) {
+            let timer = null;
+            return function(...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    fn.apply(this, args);
+                }, delay);
+            };
+        }
+
+        /**
+         * 从编辑器 MD 文本解析所有标题行
+         */
+        function parseHeadingsFromMarkdown(md) {
+            const lines = md.split('\n');
+            const headingRegex = /^(#{1,6})\s+(.*)/;
+            const result = [];
+            lines.forEach((line, idx) => {
+                const m = line.match(headingRegex);
+                if (m) {
+                    const level = m[1].length;
+                    const text = m[2].trim();
+                    result.push({ line: idx, level, text, index: result.length });
+                }
+            });
+            return result;
+        }
+
+        /**
+         * 精准滚动到指定行
+         */
+        function scrollToLine精准(cmInstance, lineNum) {
+            if (!cmInstance) return;
+            
+            // 1. 先定位到目标行
+            cmInstance.setCursor(lineNum, 0);
+            
+            // 2. 获取目标行的DOM元素
+            const lineElement = cmInstance.getLineHandle(lineNum).widget || 
+                                cmInstance.getWrapperElement().querySelector(`.CodeMirror-line[data-line="${lineNum}"]`);
+            
+            if (lineElement) {
+                // 3. 计算滚动目标位置（避开顶部遮挡）
+                const scrollContainer = cmInstance.getScrollInfo().topDiv;
+                const lineRect = lineElement.getBoundingClientRect();
+                const containerRect = scrollContainer.getBoundingClientRect();
+                
+                // 目标滚动位置 = 行的顶部位置 - 容器顶部位置 - 顶部遮挡高度
+                const targetScrollTop = lineRect.top - containerRect.top - TOP_OFFSET + scrollContainer.scrollTop;
+                
+                // 4. 平滑滚动到目标位置
+                scrollContainer.scrollTo({
+                    top: targetScrollTop,
+                    behavior: 'smooth'
+                });
+            } else {
+                // 降级方案：使用CodeMirror自带方法，手动指定偏移
+                cmInstance.scrollIntoView({
+                    line: lineNum,
+                    ch: 0
+                }, {
+                    // 确保标题在可视区域顶部下方TOP_OFFSET像素处
+                    offset: TOP_OFFSET,
+                    margin: 0
+                });
+            }
+        }
+
+        /**
+         * 渲染目录到页面
+         */
+        function renderToc(headings) {
+            const container = document.getElementById('tocListContainer');
+            if (!container) return;
+            
+            // 核心优化：文档碎片一次性插入，避免多次重排
+            const fragment = document.createDocumentFragment();
+            container.innerHTML = '';
+
+            headings.forEach(h => {
+                const levelCls = `cherry-toc-one-a__${Math.min(h.level, 4)}`;
+                const a = document.createElement('a');
+                a.className = `cherry-toc-one-a ${levelCls}`;
+                a.title = h.text;
+                a.dataset.index = h.index;
+                a.dataset.line = h.line;
+                a.innerText = ' ' + h.text;
+                // 移除行内样式，统一用CSS控制高度
+                a.style.removeProperty('height');
+                
+                // 点击跳转到对应行（核心优化：精准滚动）
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (!cm) return;
+                    
+                    const targetLine = parseInt(a.dataset.line);
+                    // 使用精准滚动函数
+                    scrollToLine精准(cm, targetLine);
+                    
+                    // 批量更新高亮，减少DOM操作
+                    const allItems = container.querySelectorAll('.cherry-toc-one-a');
+                    allItems.forEach(el => el.classList.remove('current'));
+                    a.classList.add('current');
+                });
+                
+                fragment.appendChild(a);
+            });
+
+            // 一次性插入所有元素，减少重排
+            container.appendChild(fragment);
+        }
+
+        /**
+         * 更新目录（防抖版本，避免频繁更新）
+         */
+        const updateToc = debounce(function() {
+            if (!editor) return;
+            const md = editor.getMarkdown();
+            tocItems = parseHeadingsFromMarkdown(md);
+            renderToc(tocItems);
+        }, 300);
+
+        // ========== 目录显示/隐藏交互逻辑 ==========
+        function initTocToggle() {
+            const tocContainer = document.getElementById('tocContainer');
+            const hideTocBtn = document.getElementById('hideTocBtn');
+            const tocToggleBtn = document.getElementById('tocToggleBtn');
+
+            // 隐藏目录按钮点击事件
+            hideTocBtn.addEventListener('click', function() {
+                tocContainer.classList.add('hidden');
+                tocToggleBtn.classList.add('show');
+            });
+
+            // 显示目录按钮点击事件
+            tocToggleBtn.addEventListener('click', function() {
+                tocContainer.classList.remove('hidden');
+                tocToggleBtn.classList.remove('show');
+                // 强制触发hover效果，让目录展开
+                tocContainer.style.width = '300px';
+                // 延迟恢复hover逻辑，避免立即缩回
+                setTimeout(() => {
+                    tocContainer.style.width = '';
+                }, 1000);
+            });
+        }
+
         // 页面加载完成后初始化编辑器
         window.onload = function () {
+            // 初始化目录切换交互
+            initTocToggle();
+
             mermaid.initialize({
                 flowchart: { htmlLabels: false },
                 startOnLoad: false,
                 useMaxWidth: false,  // 全局禁用响应式宽度，使用固定像素大小
-                // flowchart: { useMaxWidth: false },  // 针对流程图
-                // sequence: { useMaxWidth: false },   // 针对序列图
-                // gantt: { useMaxWidth: false },      // 针对甘特图（可选，根据您的图表类型添加）
-                // 可以添加更多类型，如 classDiagram: { useMaxWidth: false }
             });
 
             editor = new Cherry({
@@ -289,11 +619,13 @@
                 callback: {
                     afterChange: function () {
                         addPreviewTitle();
+                        updateToc(); // 防抖更新目录
                     },
                     afterRender: function () {
                         addPreviewTitle();
+                        updateToc(); // 防抖更新目录
                     }
-                }
+                },
             });
 
             function setPerviewerCss() {
@@ -618,7 +950,7 @@
 
             return `${firstLine}.${ext}`;
         }
-        async function export_word(type) {
+        async function export_word() {
             var md_content = editor.getMarkdown();
             if (!md_content) {
                 layui.use(function () {
@@ -703,7 +1035,7 @@
             }
         }
 
-        async function export_pdf(type) {
+        async function export_pdf() {
             var md_content = editor.getMarkdown();
             var html_content = editor.getHtml();
 
@@ -830,7 +1162,7 @@
                     auto: true,
                     method: 'post',
                     before: function () {
-                        // 开启加载层
+                        // 开启加载层（仅上传时显示，不再放提示语）
                         if (!layerIndex) {
                             layerIndex = layer.load(2, { shade: [0.5, '#000'], time: 15000 });
                         }
@@ -841,34 +1173,36 @@
                         if (res.success) {
                             var context = res.context || '';
                             cm.setValue(context);
-                            cm.setCursor(cm.lineCount() - 1, 0);
+                            // cm.setCursor(cm.lineCount() - 1, 0);
                             layer.msg('文件打开成功');
                         } else {
                             layer.msg(res.msg || '文件导入失败');
                         }
                     },
                     error: function () {
-                        // 错误处理
                         layerIndex && layer.close(layerIndex);
                         layerIndex = null;
                         layer.msg('上传失败，请检查网络或接口');
                     }
                 });
-                // 强制覆盖layui自动创建的上传input的accept属性
-                // 延迟执行，确保layui已经生成了对应的input元素
+
+                // 延迟执行，确保layui生成了对应的input元素
                 setTimeout(function () {
-                    // layui自动创建的上传input会绑定在按钮同级，class为layui-upload-file
                     var layuiUploadInput = document.querySelector('.layui-upload-file');
                     if (layuiUploadInput) {
-                        // 强制设置accept为指定后缀，实现浏览器级精准筛选，彻底解决筛选不准和md不显示问题
                         layuiUploadInput.accept = '.docx,.xlsx,.xls,.ods,.csv,.tsv,.html,.mhtml,.htm,.pptx,.md';
-                        // 兜底：移除layui可能添加的多余acceptMime，防止冲突
                         layuiUploadInput.removeAttribute('lay-accept');
+
+                        layuiUploadInput.addEventListener('click', function () {
+                            layer.msg('打开文件，会覆盖当前编辑器内容！', {
+                                time: 1700,
+                                offset: 'top'
+                            });
+                        });
                     }
                 }, 100);
             });
         }
-
     </script>
 </body>
 

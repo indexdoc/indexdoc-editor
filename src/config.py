@@ -11,16 +11,16 @@ tmp_path = os.path.join(base_path, 'tmp')
 rpt_path = os.path.join(base_path, 'rpt')
 user_file_path = os.path.join(base_path, 'user_file')  # 用户上传文件目录
 log_path = os.path.join(base_path, 'log')
-if not os.path.exists(tmp_path):
-    os.makedirs(tmp_path)
-if not os.path.exists(rpt_path):
-    os.makedirs(rpt_path)
+# if not os.path.exists(tmp_path):
+#     os.makedirs(tmp_path)
+# if not os.path.exists(rpt_path):
+#     os.makedirs(rpt_path)
 if not os.path.exists(user_file_path):
     os.makedirs(user_file_path)
-if not os.path.exists(log_path):
-    os.makedirs(log_path)
+# if not os.path.exists(log_path):
+    # os.makedirs(log_path)
 
-port = 50003
+port = 50002
 
 # 设置线程池最大线程数量
 from concurrent.futures import ThreadPoolExecutor

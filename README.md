@@ -3,13 +3,14 @@
 </div>
 
 ---
-# Markdown编辑器
-一款专为技术写作打造的轻量化Markdown编辑器，支持实时预览，精准匹配技术文档创作需求；支持内容导出为Word、PDF、Markdown格式，可一键复制Markdown文本，同时兼容多格式文件导入（.docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md）。
+# indexdoc-editor
+一款专为技术写作打造的轻量化Markdown编辑器，**同时支持客户端(Windows)与网页端**，支持实时预览，精准匹配技术文档创作需求；支持内容导出为Word、PDF、Markdown格式，可一键复制Markdown文本，同时兼容多格式文件导入（ ** .docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md ** ）。
 
 [![Python Version](https://img.shields.io/badge/python-3.10+-green.svg)](https://www.python.org/)  [![GitHub Stars](https://img.shields.io/github/stars/indexdoc/indexdoc-editor?style=social)](https://github.com/indexdoc/indexdoc-editor.git)
 
 ## ✨ 核心功能
 - 🔍 **实时预览编辑**：轻量化Markdown编辑核心，边写边看渲染效果，技术写作即时校验排版
+- 💻 **多端支持**：同时提供**客户端(Windows)**与**网页版**，本地离线与在线协作场景全覆盖
 - 📤 **多格式导出**：支持将内容一键导出为Word、PDF、Markdown格式文件，满足多样输出需求
 - 📋 **快捷复制**：支持一键复制Markdown原格式文本，方便跨平台粘贴使用
 - 📥 **全类型导入**：兼容.docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md多格式文件导入，内容迁移更高效
@@ -53,26 +54,52 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 选择安装路径（默认 C 盘即可，无需修改），点击「Install」完成安装。
 
 3、验证安装
+```bash
   wkhtmltopdf --version
+```
 
-
-### 配置（config.py）
-
+### 配置
+##### 网页端服务配置（config.py）
 | 配置项 | 类型 | 默认值 | 说明 |
 |--------|------|--------|------|
 | `port` | int | `50003` | 后端服务访问端口 |
 | 路径配置 | string | - | 包含`html_path`（前端页面路径）、`tmp_path`（临时文件路径）、`rpt_path`（报表路径）、`user_file_path`（用户上传文件路径）、`log_path`（日志文件路径），程序启动时自动创建不存在的目录 |
+
+##### 客户端服务配置（client_config.py）
+| 配置项 | 类型 | 默认值 | 说明 |
+|--------|------|--------|------|
+| `port` | int | `50001` | 后端服务访问端口 |
+| `base_path` | string | 由`frozen_support.get_base_path()`动态获取 | 项目基础根路径，所有路径配置均基于此路径拼接 |
+| `html_path` | string | `base_path + '/html'` | 前端HTML文件根路径 |
+| `template_path` | string | `base_path + '/template'` | 模板文件存储路径 |
+| `tmp_path` | string | `base_path + '/tmp'` | 临时文件存储路径 |
+| `log_path` | string | `base_path + '/log'` | 日志文件存储路径，若路径不存在会自动创建 |
+
+** 注意：网页端和服端的配置和运行相互独立，如 网页端配置未正确不影响客户端运行，反之亦然。 **
 ### 启动服务
+##### 网页端启动
 ```bash
 cd src  # 替换为server.py实际所在的文件夹路径
 python.exe server.py
 ```
+
+##### 客户端启动
+```bash
+cd src_client  # 替换为client_start.py实际所在的文件夹路径
+python.exe client_start.py
+
+# 在client_start.py文件中，默认打开调试模式
+webview.start(debug=True) #debug=False 关闭调试模式
+```
+
 **访问地址**
- 本地访问：`http://127.0.0.1:50003/public/cherry_markdown/markdown.html`
+ 网页端本地访问：`http://127.0.0.1:50003/public/cherry_markdown/markdown.html`
+ 客户端： 运行client_start.py 即可
 
 
 
 ## 📝 使用示例
+###  网页端使用示例
 ![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/mainPage.png)
 #### 文字操作
 ![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/wordProcessing.png)
@@ -81,6 +108,8 @@ python.exe server.py
 #### 导入文件
 **兼容.docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md多格式文件导入**
 ![主页1](https://github.com/indexdoc/indexdoc-editor/raw/main/importFile.png)
+
+###  客户端使用示例
 
 ## 📞 联系方式
 
