@@ -1,2 +1,15 @@
-# 强制将仓库主语言识别为 Python
-* linguist-language=Python
+# 核心：确保Python文件被优先识别，作为仓库主语言
+*.py linguist-language=Python linguist-detectable=true
+
+# 关键：仅让前端核心文件参与识别（保留占比），不全局强制覆盖
+*.html linguist-detectable=true
+*.js linguist-detectable=true
+*.css linguist-detectable=true
+
+# 可选：忽略无意义的静态/配置文件（避免干扰占比，按需加）
+*.md linguist-detectable=false
+*.txt linguist-detectable=false
+*.json linguist-detectable=false
+*.yml linguist-detectable=false
+*.yaml linguist-detectable=false
+README* linguist-detectable=false
