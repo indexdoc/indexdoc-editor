@@ -5,11 +5,3 @@
 *.html linguist-detectable=true
 *.js linguist-detectable=true
 *.css linguist-detectable=true
-
-# 可选：忽略无意义的静态/配置文件（避免干扰占比，按需加）
-*.md linguist-detectable=false
-*.txt linguist-detectable=false
-*.json linguist-detectable=false
-*.yml linguist-detectable=false
-*.yaml linguist-detectable=false
-README* linguist-detectable=false
