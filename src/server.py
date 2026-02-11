@@ -37,7 +37,6 @@ def custom_log_request(handler):
     log_method("%d %s (X-Real-IP=%s, X-Forwarded-For=%s) %.2fms",status,handler._request_summary(),x_real_ip,x_forwarded_for,request_time)
 
 
-
 # settings参数说明
 """
 一般设置(General settings):
