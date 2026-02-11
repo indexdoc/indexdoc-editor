@@ -1,7 +1,22 @@
-# 核心：确保Python文件被优先识别，作为仓库主语言
-*.py linguist-language=Python linguist-detectable=true
+# 核心：强制将 Python 文件标记为可检测，并优先识别
+*.py linguist-language=Python
+*.py linguist-detectable=true
+*.py linguist-weight=100  # 增加权重，提升Python的语言占比优先级
 
-# 关键：仅让前端核心文件参与识别（保留占比），不全局强制覆盖
+# 前端文件：仅保留核心文件可检测，避免占比过高
 *.html linguist-detectable=true
 *.js linguist-detectable=true
 *.css linguist-detectable=true
+
+# 可选：排除无关文件/目录（如果有大量非核心前端/配置文件，建议添加）
+# 例如排除node_modules、dist、docs等目录，避免干扰语言统计
+node_modules/** linguist-detectable=false
+dist/** linguist-detectable=false
+docs/** linguist-detectable=false
+*.md linguist-detectable=false  # 排除markdown文件（如果md文件过多会稀释Python占比）
+*.yml linguist-detectable=false
+*.yaml linguist-detectable=false
+*.json linguist-detectable=false
+
+# 关键：确保没有全局覆盖Python的配置
+* linguist-detectable=true  # 兜底，确保所有文件默认可检测（避免误屏蔽）
