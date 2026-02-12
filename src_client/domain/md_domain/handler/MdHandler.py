@@ -125,12 +125,12 @@ class ApiImportFileHandler(BaseApiHandler):
         support_suffix_pptx = {'.pptx'}
 
         # 校验文件后缀，不支持则直接返回提示
-        if _file_suffix not in support_suffix:
-            _rtn = {'success': False,
-                    'msg': '您当前上传的文件格式不支持，当前支持的文件类型有：Word、Excel、PPT、网页文件（.html、.mhtml、.htm）、Markdown',
-                    }
-            self.write(_rtn)
-            return
+        # if _file_suffix not in support_suffix:
+        #     _rtn = {'success': False,
+        #             'msg': '您当前上传的文件格式不支持，当前支持的文件类型有：Word、Excel、PPT、网页文件（.html、.mhtml、.htm）、Markdown',
+        #             }
+        #     self.write(_rtn)
+        #     return
 
         # 后缀校验通过，执行文件保存
         _file_path = upload_path + file_meta['filename']
