@@ -447,6 +447,10 @@
         let editor
         let headings = [];
         let cm;
+        // 定义文件大小限制（单位：字节），示例：10MB = 10 * 1024 * 1024 = 10485760
+        const MAX_FILE_SIZE = 10 * 1024 * 1024;
+        // 友好的大小提示文本
+        const MAX_FILE_SIZE_TEXT = '10MB';
 
         // ========== 动态目录列表==========
         let tocItems = [];
@@ -1150,76 +1154,11 @@
             }
         }
 
-        // async function initImportBtn() {
-        //     layui.use(['upload', 'layer'], function () {
-        //         var upload = layui.upload;
-        //         var layer = layui.layer;
-        //         var layerIndex = null;
-        //         var uploadInst = upload.render({
-        //             elem: '#importFile',
-        //             url: '/api/md/importFile',
-        //             accept: 'file',
-        //             exts: 'docx|xlsx|xls|ods|csv|tsv|html|mhtml|htm|pptx|md',
-        //             field: 'file',
-        //             auto: true,
-        //             method: 'post',
-        //             before: function () {
-        //                 // 开启加载层（仅上传时显示，不再放提示语）
-        //                 if (!layerIndex) {
-        //                     layerIndex = layer.load(2, { shade: [0.5, '#000'], time: 15000 });
-        //                 }
-        //             },
-        //             done: function (res) {
-        //                 layerIndex && layer.close(layerIndex);
-        //                 layerIndex = null;
-        //                 if (res.success) {
-        //                     var context = res.context || '';
-        //                     cm.setValue(context);
-        //                     // cm.setCursor(cm.lineCount() - 1, 0);
-        //                     layer.msg('文件打开成功');
-        //                 } else {
-        //                     layer.msg(res.msg || '文件导入失败');
-        //                 }
-        //             },
-        //             error: function () {
-        //                 layerIndex && layer.close(layerIndex);
-        //                 layerIndex = null;
-        //                 layer.msg('上传失败，请检查网络或接口');
-        //             }
-        //         });
-
-        //         // 延迟执行，确保layui生成了对应的input元素
-        //         setTimeout(function () {
-        //             var layuiUploadInput = document.querySelector('.layui-upload-file');
-        //             if (layuiUploadInput) {
-        //                 layuiUploadInput.accept = '.docx,.xlsx,.xls,.ods,.csv,.tsv,.html,.mhtml,.htm,.pptx,.md';
-        //                 layuiUploadInput.removeAttribute('lay-accept');
-
-        //                 layuiUploadInput.addEventListener('click', function () {
-        //                     layer.msg('打开文件，会覆盖当前编辑器内容！', {
-        //                         time: 1700,
-        //                         offset: 'top'
-        //                     });
-        //                 });
-        //             }
-        //         }, 100);
-        //     });
-        // }
-
-
-        async function initImportBtn() {
+    async function initImportBtn() {
             layui.use(['upload', 'layer'], function () {
                 var upload = layui.upload;
                 var layer = layui.layer;
                 var layerIndex = null;
-
-                // 定义文件大小限制（单位：字节），示例：10MB = 10 * 1024 * 1024 = 10485760
-                const MAX_FILE_SIZE = 10 * 1024 * 1024;
-                // 友好的大小提示文本
-                const MAX_FILE_SIZE_TEXT = '10MB';
-                // 标记是否允许上传
-                let allowUpload = true;
-
                 var uploadInst = upload.render({
                     elem: '#importFile',
                     url: '/api/md/importFile',
@@ -1228,37 +1167,20 @@
                     field: 'file',
                     auto: true,
                     method: 'post',
-                    // 1. 选择文件时校验大小，标记是否允许上传
-                    choose: function (obj) {
-                        // 重置允许上传标记
-                        allowUpload = true;
-                        var file = obj.pushFile();
-
-                        for (var key in file) {
-                            var currentFile = file[key];
-                            // 校验文件大小
-                            if (currentFile.size > MAX_FILE_SIZE) {
-                                // 移除超出大小的文件
-                                obj.resetFile(key);
-                                // 标记为不允许上传
-                                allowUpload = false;
-                                // 提示用户
-                                layer.msg(`文件大小不能超过${MAX_FILE_SIZE_TEXT}`, {
-                                    icon: 2, // 错误图标
-                                    time: 3000
-                                });
-                                // 终止后续逻辑
-                                return false;
-                            }
-                        }
-                    },
-                    // 2. 上传前最后拦截，彻底阻止请求发送
-                    before: function () {
-                        // 如果不允许上传，直接终止并关闭加载层
-                        if (!allowUpload) {
-                            layerIndex && layer.close(layerIndex);
-                            layerIndex = null;
-                            // 阻止上传流程
+                    multiple: false,
+                    before: function (obj) {
+                        var getChooseFiles = obj.getChooseFiles();
+                        const fileList = Object.values(getChooseFiles);
+                        const file = fileList[0];
+                        if (file.size > MAX_FILE_SIZE) {
+                            // 标记为不允许上传
+                            allowUpload = false;
+                            // 提示用户
+                            layer.msg(`文件大小不能超过${MAX_FILE_SIZE_TEXT}`, {
+                                icon: 2, // 错误图标
+                                time: 3000
+                            });
+                            // 终止后续逻辑
                             return false;
                         }
                         // 开启加载层（仅上传时显示，不再放提示语）
@@ -1272,6 +1194,7 @@
                         if (res.success) {
                             var context = res.context || '';
                             cm.setValue(context);
+                            // cm.setCursor(cm.lineCount() - 1, 0);
                             layer.msg('文件打开成功');
                         } else {
                             layer.msg(res.msg || '文件导入失败');
@@ -1301,7 +1224,8 @@
                 }, 100);
             });
         }
-
+ 
+        
     </script>
 </body>
 
