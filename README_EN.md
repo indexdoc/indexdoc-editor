@@ -17,7 +17,7 @@
 
 ---
 # indexdoc-editor
-A lightweight Markdown editor specifically designed for technical writing, **supporting both desktop (Windows) and web versions** with real-time preview to precisely meet the needs of technical documentation creation. It allows exporting content to Word, PDF, and Markdown formats, one-click copying of Markdown text, and supports importing files in multiple formats ( ** .docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md ** ).
+A lightweight Markdown editor specifically designed for technical writing, **supporting both desktop (Windows) and web versions** with real-time preview to precisely meet the needs of technical documentation creation. It allows exporting content to Word, PDF, and Markdown formats, one-click copying of Markdown text, and supports importing files in multiple formats ( **.docx、.xlsx、.xls、.ods、.csv、.tsv、.html、.mhtml、.htm、.pptx、.md** ).
 
 [![Python Version](https://img.shields.io/badge/python-3.10+-green.svg)](https://www.python.org/)  [![GitHub Stars](https://img.shields.io/github/stars/indexdoc/indexdoc-editor?style=social)](https://github.com/indexdoc/indexdoc-editor.git)  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
