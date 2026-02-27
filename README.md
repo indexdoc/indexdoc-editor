@@ -13,8 +13,6 @@
     <a href="https://github.com/indexdoc/indexdoc-converter" target="_blank" style="color: #0969da; text-decoration: none; margin: 0 6px;">indexdoc-converter（文档转换器）</a><br/>
     <a href="https://github.com/indexdoc/indexdoc-vector" target="_blank" style="color: #0969da; text-decoration: none; margin: 0 6px;">indexdoc-vector（向量数据库）</a><br/>
   </div>
-
-
 ---
 
 # indexdoc-editor
@@ -50,23 +48,16 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 
 ### 安装导出 Word文档所需要的工具 pandoc(Windows系统)
 1、打开 pandoc 官方下载页：https://github.com/jgm/pandoc/releases/latest
-
-2、找到以 pandoc-x.x.x-windows-x86_64.msi 命名的安装包（x.x.x 是最新版本号），点击下载；
-
-3、双击下载的 msi 文件，一路点击「Next」，建议勾选「Add pandoc to the system PATH for all users」（自动配置环境变量，否则需要手动配）；
+2、找到以 pandoc-x.x.x-windows-x86_64.msi 命名的安装包下载（注意配置环境变量）；
 
 ### 安装导出 Pdf文档所需要的工具 wkhtmltopdf(Windows系统)
 官方下载地址统一：https://github.com/wkhtmltopdf/packaging/releases 官方 GitHub Releases
 
 1、选择并下载安装包
 打开官方 Releases 页，找到Windows对应版本，根据自己的系统选择：
-64 位系统（绝大多数电脑）：下载命名为 wkhtmltox-x.x.x_msvc2015-win64.exe 的文件（x.x.x 为最新版本号）；
-32 位系统（老旧电脑）：下载 wkhtmltox-x.x.x_msvc2015-win32.exe 的文件。
+如：64 位系统：下载命名为 wkhtmltox-x.x.x_msvc2015-win64.exe 的文件；
 
-2、安装并自动配置环境变量
-双击下载的exe安装包，一路点击「Next」；
-关键步骤：安装界面会有「Add to PATH」（或「Add application directory to your system PATH」）选项，务必勾选（默认一般勾选，确认即可）；
-选择安装路径（默认 C 盘即可，无需修改），点击「Install」完成安装。
+2、安装.exe文件并自动配置环境变量
 
 3、验证安装
 ```bash
@@ -110,8 +101,6 @@ webview.start(debug=True) #debug=False 关闭调试模式
 **访问地址**
  网页端本地访问：`http://127.0.0.1:50003/public/cherry_markdown/markdown.html`
  客户端： 运行client_start.py 即可
-
-
 
 ## 📝 使用示例
 ###  网页端使用示例
