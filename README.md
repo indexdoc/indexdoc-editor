@@ -13,7 +13,7 @@
     <a href="https://github.com/indexdoc/indexdoc-converter" target="_blank" style="color: #0969da; text-decoration: none; margin: 0 6px;">indexdoc-converter（文档转换器）</a><br/>
     <a href="https://github.com/indexdoc/indexdoc-vector" target="_blank" style="color: #0969da; text-decoration: none; margin: 0 6px;">indexdoc-vector（向量数据库）</a><br/>
   </div>
----
+
 
 # indexdoc-editor
 一款专为技术写作打造的轻量化Markdown编辑器，**同时支持客户端(Windows)与网页端**，支持实时预览，精准匹配技术文档创作需求；支持内容导出为Word、PDF、Markdown格式，可一键复制Markdown文本，同时兼容多格式文件导入
